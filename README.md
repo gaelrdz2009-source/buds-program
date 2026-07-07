@@ -1,1 +1,1353 @@
-# buds-program
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>BUD/S Preparation Program — 47 Weeks</title>
+<style>
+:root{color-scheme:light;--paper:#FAFAFA;--ink:#141414;--panel:#FFFFFF;--olive:#0A0A0A;--steel:#444444;--line:#E8E8E8;--muted:#7A7A7A;--head:#FFFFFF}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+::selection{background:#0A0A0A;color:#fff}
+.hdr{position:sticky;top:0;z-index:20;background:#0A0A0A;color:#fff;padding:14px 16px 0;transition:box-shadow .3s ease}
+.hdr.scrolled{box-shadow:0 8px 24px rgba(0,0,0,.22)}
+.eyebrow{font:600 10px/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.18em;color:rgba(255,255,255,.5);text-transform:uppercase}
+.hdr h1{margin:6px 0 10px;font-size:17px;font-weight:800;letter-spacing:-.01em;color:#fff}
+.tabs{display:flex;gap:2px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:1 0 auto;min-width:82px;appearance:none;border:0;background:transparent;color:rgba(255,255,255,.5);padding:12px 10px 15px;font:600 13px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;letter-spacing:.02em;cursor:pointer;position:relative;transition:color .2s ease}
+.tab::after{content:"";position:absolute;left:24%;right:24%;bottom:8px;height:2px;background:#fff;border-radius:2px;transform:scaleX(0);transition:transform .25s ease}
+.tab.active{color:#fff}
+.tab.active::after{transform:scaleX(1)}
+main{max-width:820px;margin:0 auto;padding:16px 14px 90px}
+.page{display:none}
+.page.active{display:block;animation:pageIn .3s ease}
+.subpage{display:none}
+.subpage.active{display:block;animation:pageIn .3s ease}
+@keyframes pageIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 16px;margin:0 0 14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.card h2{margin:0 0 10px;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#0A0A0A}
+.card h2::after{content:"";display:block;width:26px;height:2px;background:#0A0A0A;margin-top:8px;border-radius:2px}
+.card p{margin:9px 0}
+.card ul,.card ol{margin:8px 0;padding-left:20px}
+.card li{margin:6px 0}
+b{font-weight:700}
+.note{font-size:13.5px;color:var(--muted)}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:13px;background:#fff}
+th{background:#0A0A0A;font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.9);padding:9px 8px;text-align:left}
+td{border-bottom:1px solid var(--line);padding:8px;vertical-align:top;text-align:left}
+tr:last-child td{border-bottom:0}
+.charts table{min-width:760px}
+.mid table{min-width:600px}
+td.wk,tr.test td.wk,tr.off td.wk{font-family:ui-monospace,Menlo,Consolas,monospace;white-space:nowrap;font-weight:700;background:#0A0A0A;color:#FFFFFF;border-bottom:1px solid #2E2E2E}
+tr.test td{background:#F4F4F2}
+
+tr.off td{color:#9C9C9C;background:#FCFCFB}
+h3.blk{display:inline-block;margin:20px 0 8px;padding:8px 13px;font:700 11.5px/1.3 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.1em;text-transform:uppercase;color:#FFFFFF;background:#0A0A0A;border-radius:8px}
+.subtabs{display:flex;gap:8px;margin:2px 0 14px}
+.subtab{flex:1;border:1px solid #0A0A0A;background:#fff;color:#0A0A0A;padding:12px 6px;border-radius:12px;font-weight:700;font-size:13px;letter-spacing:.02em;cursor:pointer;transition:background .2s ease,color .2s ease,transform .12s ease}
+.subtab.active{background:#0A0A0A;color:#fff}
+.subtab:active{transform:scale(.98)}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;margin:0 0 10px;overflow:hidden;transition:box-shadow .25s ease}
+details[open]{box-shadow:0 3px 12px rgba(0,0,0,.06)}
+summary{padding:14px 16px;font-weight:700;font-size:14.5px;cursor:pointer;list-style:none;display:flex;gap:12px;align-items:baseline;transition:background .2s ease}
+summary:active{background:#F5F5F5}
+summary::-webkit-details-marker{display:none}
+summary .no{font-family:ui-monospace,Menlo,Consolas,monospace;color:#8A8A8A;font-size:11.5px;min-width:30px;flex:none;font-weight:700}
+summary .plus{margin-left:auto;color:#0A0A0A;font-weight:400;font-size:19px;line-height:1;flex:none;transition:transform .25s ease}
+details[open] summary .plus{transform:rotate(45deg)}
+.dbody{padding:2px 16px 15px;border-top:1px solid var(--line);font-size:15px;animation:fadeIn .25s ease}
+.dbody p{margin:9px 0}
+.dbody ul,.dbody ol{margin:8px 0;padding-left:20px}
+.dbody li{margin:6px 0}
+.warn{border-left:3px solid #0A0A0A;background:#F5F5F4;padding:10px 12px;margin:10px 0;font-size:14.5px;border-radius:0 10px 10px 0}
+footer{max-width:820px;margin:0 auto;padding:0 16px 44px;font-size:12px;color:#9C9C9C;text-align:center}
+:focus-visible{outline:2px solid #0A0A0A;outline-offset:2px}
+.frow{display:flex;align-items:center;gap:10px;margin:9px 0}
+.frow label{flex:1;font-size:14px}
+.frow input,.frow select{flex:1;padding:11px 12px;border:1px solid #D9D9D9;border-radius:10px;font-size:15px;background:#fff;color:var(--ink);min-width:0;transition:border-color .2s ease,box-shadow .2s ease}
+.frow input:focus,.frow select:focus,.gsearch:focus{border-color:#0A0A0A;box-shadow:0 0 0 3px rgba(0,0,0,.07);outline:none}
+.btn{display:block;width:100%;margin-top:10px;padding:14px;border:0;border-radius:12px;background:#0A0A0A;color:#fff;font-weight:700;font-size:14px;letter-spacing:.02em;cursor:pointer;transition:transform .12s ease,opacity .2s ease}
+.btn:active{transform:scale(.985)}
+.btn2{background:#fff;color:#0A0A0A;border:1px solid #0A0A0A;margin-top:12px}
+.pv{margin:7px 0;font-size:15px}
+.pv b{display:inline-block;min-width:150px}
+.gsearch{width:100%;padding:12px 13px;border:1px solid #D9D9D9;border-radius:12px;font-size:15px;background:#fff;color:var(--ink);transition:border-color .2s ease,box-shadow .2s ease}
+.g{padding:10px 0;border-bottom:1px solid #F0F0EE;font-size:14.5px;line-height:1.55}
+.g:last-child{border-bottom:0}
+.gcat h2{margin-bottom:2px}
+.toolrow{display:flex;gap:8px;margin:0 0 12px}
+.tbtn{flex:1;padding:11px;border:1px solid #0A0A0A;background:#fff;color:#0A0A0A;border-radius:10px;font-size:13px;font-weight:700;cursor:pointer;transition:background .2s ease,color .2s ease,transform .12s ease}
+.tbtn:active{background:#0A0A0A;color:#fff;transform:scale(.98)}
+.jump{display:block;width:100%;padding:12px;margin:0 0 10px;border:1px solid #D9D9D9;border-radius:12px;font-size:14px;font-weight:600;color:#0A0A0A;background:#fff;transition:border-color .2s ease,box-shadow .2s ease}
+.jump:focus{border-color:#0A0A0A;box-shadow:0 0 0 3px rgba(0,0,0,.07);outline:none}
+#totop{position:fixed;right:14px;bottom:18px;z-index:30;display:none;width:46px;height:46px;border:0;border-radius:50%;background:#0A0A0A;color:#fff;font-size:17px;font-weight:700;box-shadow:0 4px 14px rgba(0,0,0,.28);cursor:pointer;transition:transform .15s ease}
+#totop:active{transform:scale(.94)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="eyebrow">Jul 6, 2026 – May 27, 2027 · v4</div>
+  <h1>BUD/S Preparation Program — 47 Weeks</h1>
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-page="pg-overview">Overview</button>
+    <button class="tab" data-page="pg-charts">Charts</button>
+    <button class="tab" data-page="pg-sections">Sections</button>
+    <button class="tab" data-page="pg-science">Science</button>
+    <button class="tab" data-page="pg-calibrate">Calibrate</button>
+    <button class="tab" data-page="pg-glossary">Glossary</button>
+    <button class="tab" data-page="pg-adjust">Adjust</button>
+  </div>
+</div>
+
+<main>
+
+<!-- ================= PAGE 1: OVERVIEW ================= -->
+<section id="pg-overview" class="page active">
+
+  <div class="card">
+    <h2>How to use this</h2>
+    <ol>
+      <li><b>Charts</b> tab: find the current week, do what the row says.</li>
+      <li><b>Sections</b> tab: every workout name is explained there. Tap a section to open it. § numbers in the charts point to those sections.</li>
+      <li>After every test, enter the scores in the <b>Calibrate</b> tab — it updates your paces, treadmill speeds, swim targets, and remaining gates automatically.</li>
+      <li>When something goes wrong — missed days, sickness, pain, a failed target — the <b>Adjust</b> tab applies the plan&#8217;s rules to your situation and outputs the decision. No outside input needed.</li>
+      <li>Any word you do not recognize — an exercise, a term, an abbreviation — is defined in the <b>Glossary</b> tab, which has a search box.</li>
+      <li>The <b>Science</b> tab explains how to run each session type correctly (intensity zones, the 4×4 interval method, swim mechanics, hypertrophy dose). Read it once before Week 1 — it changes how the sessions are executed, not just why.</li>
+    </ol>
+    <p class="note">A heart-rate monitor (chest strap) is required equipment for this version. Intensity zones are set by heart rate; running easy days too hard and hard days too easy is the most common way endurance plans fail (Science tab, A).</p>
+  </div>
+
+  <div class="card">
+    <h2>The two phases, explained</h2>
+    <p><b>Phase A — Weeks 1–21 (Jul 6 – Nov 29). Build the base while gaining weight.</b><br>
+    Lifting stays the main focus (3 gym days a week) and you keep eating extra to grow toward ~175–180 lb. Underneath the bulk, running and swimming start very small and grow slowly, so your bones, tendons, and swim stroke are ready before the hard work begins. Phase A ends with Test 4 on Nov 28.</p>
+    <p><b>Phase B — Weeks 22–47 (Nov 30 – May 27). Slim down while getting fast.</b><br>
+    Running and swimming become the main job. Lifting drops to one short full-body day a week (to keep the muscle you built). You eat a little less each day to come down toward 158–165 lb. From Week 26, every weekday morning starts with the push-up + pull-up routine. Phase B ends with the final test on May 22 and the fin-swim test on May 25.</p>
+    <p class="note">Inside each phase, weeks are grouped in blocks of about 4. The last week of most blocks is a <b>deload</b> — a planned easy week. Deloads are part of the program, not a break from it.</p>
+  </div>
+
+  <div class="card">
+    <h2>Equipment</h2>
+    <ul>
+      <li><b>Garmin watch:</b> wrist heart rate is accurate enough for easy runs at steady pace — cap easy days by HR. During intervals, wrist HR lags and misreads; run intervals by Garmin pace + the talk test instead. A chest strap that pairs to the watch fixes this; useful, not mandatory.</li>
+      <li><b>Intervals without a track:</b> flat empty street. Measure a 400m stretch once with the watch, or run repeats by time from the pace table. The 4x4 sessions are time-based anyway.</li>
+      <li><b>Treadmill (gym):</b> usable for interval sessions and bad-weather easy runs, with the rules in the Sections tab (2): 1% incline always, at most half of weekly running indoors, all tests and benchmarks outdoors.</li>
+      <li><b>Rigid fins (rocket/jet type):</b> buy by Week 16. Fin work starts Week 17.</li>
+      <li><b>Already covered:</b> pool, boots. Add: two pairs of running shoes (rotate), a short rope for knots (Phase B), a pull-up bar.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Words to know</h2>
+    <ul>
+      <li><b>Easy run</b> — slow enough to speak in full sentences the entire time. If not, slow down. Most weekly running is at this speed. This is intentional.</li>
+      <li><b>Bursts</b> — after an easy run: 4–6 runs of ~20 seconds, fast but controlled, full walk-back rest between.</li>
+      <li><b>Speed play</b> — inside a run: 1 minute faster, 1 minute slow jog, repeated. "8×1" = 8 rounds.</li>
+      <li><b>Track 6×400</b> — interval repeats. No track needed: use the Garmin on a flat, empty street. Either measure a 400m stretch once and reuse it, or run repeats by time (the pace table gives the exact time per repeat, e.g. 1:43 per 400m at an 11:00 baseline). 60–90 seconds slow jog between. Every repeat the same speed.</li>
+      <li><b>Hard run</b> — a VO2max interval session, run as the 4×4 protocol (four 4-minute efforts at 90–95% max heart rate, 3 min easy jog between). This is the highest-value endurance session in the plan. Full method on the Science tab (B).</li>
+      <li><b>Long run</b> — longest easy run of the week.</li>
+      <li><b>Boots run</b> — easy run in military-style boots on grass or sand. Never fast.</li>
+      <li><b>Deload week</b> — a planned easy week. Fitness is built during recovery. Do only what is written.</li>
+      <li><b>Test</b> — full practice of the Navy Physical Screening Test. Exact procedure in §15.</li>
+      <li><b>Goal pace</b> — the speed that produces your target time. Example: an 8:20 swim = 50 yards every 50 seconds. A 9:00 run = 90 seconds per 400m lap.</li>
+      <li><b>Maintenance calories</b> — the amount of food that keeps weight the same. Phase A = eat 300–500 above it. Phase B = eat 300–400 below it.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Program overview</h2>
+    <div class="scroll mid"><table>
+      <tr><th>Phase</th><th>Weeks</th><th>Dates</th><th>Purpose</th><th>Approx. weight</th></tr>
+      <tr><td>A1</td><td>1–4</td><td>Jul 6–Aug 2</td><td>Baseline test, learn the stroke, start running</td><td>153–156</td></tr>
+      <tr><td>A2–A3</td><td>5–12</td><td>Aug 3–Sep 27</td><td>Build easy mileage, swim technique</td><td>to ~163</td></tr>
+      <tr><td>A4–A5</td><td>13–21</td><td>Sep 28–Nov 29</td><td>Finish bulk, add speed work</td><td>to ~175–180</td></tr>
+      <tr><td>B1</td><td>22–25</td><td>Nov 30–Dec 27</td><td>Cut begins, volume base</td><td>~177</td></tr>
+      <tr><td>B2</td><td>26–29</td><td>Dec 28–Jan 24</td><td>Track intervals, Armstrong pull-ups begin</td><td>~175</td></tr>
+      <tr><td>B3</td><td>30–33</td><td>Jan 25–Feb 21</td><td>Fins, boots, long runs</td><td>~172</td></tr>
+      <tr><td>B4</td><td>34–38</td><td>Feb 22–Mar 28</td><td>Two sessions a day, 4-mile test</td><td>~168</td></tr>
+      <tr><td>B5</td><td>39–43</td><td>Mar 29–May 2</td><td>Highest volume</td><td>~164</td></tr>
+      <tr><td>B6</td><td>44–47</td><td>May 3–27</td><td>Reduce volume, final tests</td><td>158–165</td></tr>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <h2>Target scores</h2>
+    <p class="note">Official minimums: swim 12:30 · 50 push-ups · 50 sit-ups · 10 pull-ups · run 10:30. Official competitive level: swim ≤9:30 · 75 · 75 · 15 · run ≤9:30. The targets below aim past competitive.</p>
+    <div class="scroll mid"><table>
+      <tr><th>Test</th><th>Date</th><th>500-yd swim</th><th>Push-ups</th><th>Sit-ups</th><th>Pull-ups</th><th>1.5-mi run</th></tr>
+      <tr><td>1 — baseline</td><td>Sat Jul 11</td><td>~11:00 (confirm + splits)</td><td>record</td><td>record</td><td>record</td><td>~11:00 (confirm)</td></tr>
+      <tr><td>2</td><td>Sat Sep 19</td><td>10:15</td><td>+10</td><td>+10</td><td>+3</td><td>10:35</td></tr>
+      <tr><td>3</td><td>Sat Oct 24</td><td>9:45</td><td>60</td><td>60</td><td>11</td><td>10:15</td></tr>
+      <tr><td>4 — end of bulk</td><td>Sat Nov 28</td><td>9:20</td><td>66</td><td>66</td><td>12</td><td>10:00</td></tr>
+      <tr><td>5</td><td>Sat Jan 2</td><td>9:05</td><td>70</td><td>70</td><td>13</td><td>9:50</td></tr>
+      <tr><td>6</td><td>Sat Jan 30</td><td>8:50</td><td>75</td><td>75</td><td>14</td><td>9:40</td></tr>
+      <tr><td>7</td><td>Sat Mar 6</td><td>8:35</td><td>82</td><td>82</td><td>16</td><td>9:20</td></tr>
+      <tr><td>8</td><td>Sat Apr 10</td><td>8:20</td><td>88</td><td>88</td><td>18</td><td>9:05</td></tr>
+      <tr><td>9</td><td>Sat May 1</td><td>8:10</td><td>92</td><td>92</td><td>19</td><td>8:55</td></tr>
+      <tr class="test"><td><b>FINAL</b></td><td><b>Sat May 22</b></td><td><b>8:00–8:15</b></td><td><b>95–100</b></td><td><b>95–100</b></td><td><b>20+</b></td><td><b>&#8804;8:50</b></td></tr>
+    </table></div>
+    <p>Additional targets: tread — Wk 9 baseline, 5 min hands-out by May. 4-mile run — Wk 27 first benchmark (record), Wk 34 under 30:30, Wk 39 under 29:00, Wk 44 under 28:00. 1,000m fin swim — Wk 32 baseline, May 25 under 17:00.</p>
+    <p class="note">Swim and run columns are calibrated to the stated 11:00 baselines. Push/sit/pull columns assume a mid-range start; after Test 1, the Calibrate tab rebuilds all remaining targets automatically from your recorded numbers, keeping the FINAL row fixed. If a target is missed, repeat that block&#8217;s Saturday emphasis and retest in two weeks (see Sections tab, 13). Do not skip deloads to catch up.</p>
+  </div>
+
+  <div class="card">
+    <h2>Daily habits (run automatically; not printed in the charts)</h2>
+    <p><b>Every day, all year:</b></p>
+    <ul>
+      <li>10 minutes of stretching (§12)</li>
+      <li>5 minutes of box breathing in bed (§11)</li>
+      <li>8–9 hours of sleep — adolescent athletes under 8 hours carried 1.7× the injury rate; 8+ hours cut injury odds by 68% (Science tab, G)</li>
+      <li>Morning heart rate check 3 days a week: before getting out of bed, count pulse for 60 seconds, write it down (§12)</li>
+    </ul>
+    <p><b>Phase A (Weeks 1–21):</b></p>
+    <ul>
+      <li>Mon/Wed/Fri: small pull-up sets through the day (§5)</li>
+      <li>From Week 5: 3 max-effort push-up sets on Mon/Wed/Fri mornings (§6)</li>
+      <li>From Week 9: sit-up practice Tue/Thu (§7)</li>
+    </ul>
+    <p><b>Phase B (Weeks 22–47):</b></p>
+    <ul>
+      <li>Every weekday morning from Week 26: 3 max-effort push-up sets within ~10 minutes of waking, then that day's Armstrong pull-up workout (§5–6). About 20 minutes total.</li>
+      <li>Tue/Thu/Sat: sit-up practice after the main session</li>
+      <li>Twice a week after lifting: injury-prevention circuit (§12) + grip work (§8)</li>
+      <li>Two 5-minute knot practice blocks per week, on dry land (§8)</li>
+    </ul>
+    <p><b>Sunday is a full rest day in both phases.</b></p>
+  </div>
+
+</section>
+
+<!-- ================= PAGE 2: CHARTS ================= -->
+<section id="pg-charts" class="page charts">
+
+  <div class="subtabs">
+    <button class="subtab active" data-sub="sub-a">Phase A · Wks 1–21</button>
+    <button class="subtab" data-sub="sub-b">Phase B · Wks 22–47</button>
+  </div>
+
+  <!-- PHASE A -->
+  <div id="sub-a" class="subpage active">
+    <div class="card">
+      <h2>Phase A — build base while gaining (Weeks 1–21)</h2>
+      <p class="note">Calibrated to baseline: ~11:00 swim, ~11:00 run. Eat 300–500 above maintenance (§10). Swimming runs 4 sessions/week from Week 1 (5 optional from Week 13) — it is the largest score gap and the cheapest place to add work while bulking. Sunday is always off.</p>
+    </div>
+
+    <h3 class="blk">Weeks 1–4 — establish the pattern</h3>
+    <div class="scroll"><table>
+      <tr><th>Wk</th><th>Dates</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+      <tr class="test"><td class="wk">1</td><td class="wk">Jul 6–12</td><td>Lift A · swim skills 800</td><td>Easy run 1.5 + bursts</td><td>Lift B · swim skills 1000</td><td>Easy run 1.5</td><td>Lift C · swim skills 1000</td><td><b>TEST 1 — baseline, record 50-yd swim splits</b></td></tr>
+      <tr><td class="wk">2</td><td class="wk">Jul 13–19</td><td>Lift A · swim skills 1000</td><td>Easy run 1.5 + bursts</td><td>Lift B · swim skills + 4×50 build</td><td>Easy run 2</td><td>Lift C · swim skills 1000</td><td>Easy run 2 · swim 200 nonstop + skills</td></tr>
+      <tr><td class="wk">3</td><td class="wk">Jul 20–26</td><td>Lift A · swim skills 1000</td><td>Easy run 2 + bursts</td><td>Lift B · swim skills + 6×50</td><td>Easy run 2</td><td>Lift C · swim skills 1000</td><td>Easy run 2.5 · swim 250 nonstop + skills</td></tr>
+      <tr class="off"><td class="wk">4</td><td class="wk">Jul 27–Aug 2</td><td>Lift A (light) · easy swim 800</td><td>Easy run 1.5</td><td>Lift B (light)</td><td>Easy swim 800</td><td>Lift C (light)</td><td>Easy run 1.5 — <b>DELOAD</b></td></tr>
+    </table></div>
+
+    <h3 class="blk">Weeks 5–8 — morning push-ups begin (Mon/Wed/Fri); 50-50 workout debuts</h3>
+    <div class="scroll"><table>
+      <tr><th>Wk</th><th>Dates</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+      <tr><td class="wk">5</td><td class="wk">Aug 3–9</td><td>Lift A · swim skills 1000</td><td>Easy run 2.5 + bursts</td><td>Lift B · swim 10×50</td><td>Easy run 2</td><td>Lift C · swim skills 1000</td><td>Easy run 2.5 · swim 300 nonstop + 4×50</td></tr>
+      <tr><td class="wk">6</td><td class="wk">Aug 10–16</td><td>Lift A · swim skills 1000</td><td>Easy run 2.5 + bursts</td><td>Lift B · swim 10×50</td><td>Easy run 2</td><td>Lift C · swim skills 1000</td><td>Easy run 3 · swim 350 nonstop</td></tr>
+      <tr><td class="wk">7</td><td class="wk">Aug 17–23</td><td>Lift A · swim skills 1000</td><td>Easy run 2.5 + bursts</td><td>Lift B · swim 10×50</td><td>Easy run 2.5</td><td>Lift C · swim skills 1000</td><td>Easy run 3 · <b>swim 50-50 ×6</b> + 200 easy</td></tr>
+      <tr class="off"><td class="wk">8</td><td class="wk">Aug 24–30</td><td>Lift A (light) · easy swim 800</td><td>Easy run 2</td><td>Lift B (light)</td><td>Easy swim 800</td><td>Lift C (light)</td><td>Easy run 2 — <b>DELOAD</b>. Sit-up practice begins next week (Tue/Thu)</td></tr>
+    </table></div>
+
+    <h3 class="blk">Weeks 9–12 — 4th run added (Wed AM); tread baseline</h3>
+    <div class="scroll"><table>
+      <tr><th>Wk</th><th>Dates</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+      <tr class="test"><td class="wk">9</td><td class="wk">Aug 31–Sep 6</td><td>Lift A · swim skills 1000</td><td>Easy run 3 + bursts</td><td>AM easy run 1.5 · Lift B · swim 5×100</td><td>Easy run 2</td><td>Lift C · swim skills 1000</td><td>Easy run 3 · swim 50-50 ×8 · <b>TREAD TEST: max time, hands in</b></td></tr>
+      <tr><td class="wk">10</td><td class="wk">Sep 7–13</td><td>Lift A · swim skills 1000</td><td>Easy run 3 + bursts</td><td>AM easy run 2 · Lift B · swim 5×100</td><td>Easy run 2</td><td>Lift C · swim skills 1000</td><td>Easy run 3 · swim 400 nonstop + 50-50 ×8</td></tr>
+      <tr class="test"><td class="wk">11</td><td class="wk">Sep 14–20</td><td>Lift A · swim skills 1000</td><td>Easy run 3 + bursts</td><td>AM easy run 2 · Lift B · swim skills</td><td>Easy run 2 (very easy)</td><td>Lift C (light)</td><td><b>TEST 2 — record splits</b></td></tr>
+      <tr class="off"><td class="wk">12</td><td class="wk">Sep 21–27</td><td>Lift A (light) · easy swim 1000</td><td>Easy run 2</td><td>Lift B (light) · easy swim 800</td><td>Easy run 2</td><td>Lift C (light)</td><td>Easy swim — <b>DELOAD</b></td></tr>
+    </table></div>
+
+    <h3 class="blk">Weeks 13–16 — speed play begins; 500 nonstop becomes routine; optional 5th swim allowed</h3>
+    <div class="scroll"><table>
+      <tr><th>Wk</th><th>Dates</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+      <tr><td class="wk">13</td><td class="wk">Sep 28–Oct 4</td><td>Lift A · swim skills 1000</td><td>Easy run 3.5 + bursts</td><td>AM easy run 2 · Lift B · swim 6×100</td><td>Speed play 8×1</td><td>Lift C · swim 1200: 8×50 pace + easy</td><td>Easy run 4 · swim 50-50 ×10 + <b>500 nonstop</b></td></tr>
+      <tr><td class="wk">14</td><td class="wk">Oct 5–11</td><td>Lift A · swim skills 1000</td><td>Easy run 3.5 + bursts</td><td>AM easy run 2 · Lift B · swim 6×100</td><td>Speed play 8×1</td><td>Lift C · swim 1200: 8×50 pace + easy</td><td>Easy run 4 · swim 50-50 ×10 + 500 nonstop</td></tr>
+      <tr><td class="wk">15</td><td class="wk">Oct 12–18</td><td>Lift A · swim skills 1000</td><td>Easy run 4 + bursts</td><td>AM easy run 2 · Lift B · swim 6×100</td><td>Speed play 8×1</td><td>Lift C · swim 1200</td><td>Easy run 4.5 · swim 50-50 ×10</td></tr>
+      <tr class="test"><td class="wk">16</td><td class="wk">Oct 19–25</td><td>Lift A (light) · easy swim 1000</td><td>Easy run 2</td><td>Lift B (light) · easy swim 800</td><td>Easy run 2 (very easy)</td><td>Rest</td><td><b>TEST 3</b> — deload week. Buy rigid fins this week.</td></tr>
+    </table></div>
+
+    <h3 class="blk">Weeks 17–21 — fins begin; finish the bulk</h3>
+    <div class="scroll"><table>
+      <tr><th>Wk</th><th>Dates</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+      <tr><td class="wk">17</td><td class="wk">Oct 26–Nov 1</td><td>Lift A · swim skills 1000</td><td>Easy run 4 + bursts</td><td>AM easy run 2 · Lift B · swim 8×50 pace + <b>fins 4×100 easy intro</b></td><td>Speed play 10×1</td><td>Lift C · swim 1200</td><td>Easy run 4.5 · swim 50-50 ×10 + 500 nonstop + tread 3</td></tr>
+      <tr><td class="wk">18</td><td class="wk">Nov 2–8</td><td>Lift A · swim skills 1000</td><td>Easy run 4 + bursts</td><td>AM easy run 2 · Lift B · swim 8×50 pace + fins 75/25 ×6</td><td>Speed play 10×1</td><td>Lift C · swim 1200</td><td>Easy run 4.5 · swim 50-50 ×10 + tread 3</td></tr>
+      <tr><td class="wk">19</td><td class="wk">Nov 9–15</td><td>Lift A · swim skills 1000</td><td>Easy run 4 + bursts</td><td>AM easy run 2 · Lift B · swim 8×50 pace + fins 75/25 ×8</td><td>Speed play 10×1</td><td>Lift C · swim 1200</td><td>Easy run 5 · swim 500 nonstop</td></tr>
+      <tr class="off"><td class="wk">20</td><td class="wk">Nov 16–22</td><td>Lift A (light) · easy swim 1000</td><td>Easy run 2.5</td><td>Lift B (light) · easy swim 800</td><td>Easy run 2.5</td><td>Rest</td><td>Easy swim — <b>DELOAD</b></td></tr>
+      <tr class="test"><td class="wk">21</td><td class="wk">Nov 23–29</td><td>Lift A · easy swim 1000</td><td>Easy run 2 + bursts</td><td>Lift B · easy swim 800</td><td>Easy run 1.5</td><td>Rest</td><td><b>TEST 4 — end of bulk</b></td></tr>
+    </table></div>
+  </div>
+
+  <!-- PHASE B -->
+  <div id="sub-b" class="subpage">
+    <div class="card">
+      <h2>Phase B — cut while building speed (Weeks 22–47)</h2>
+      <p class="note">Weeks 22–23: maintenance calories (stabilize after the surplus and measure the true maintenance number). The 300–400 deficit begins Week 24 (§10). From Week 26: every swim session is 1,000 yards minimum, and a 5th swim is standard — 800–1,000 yd easy technique after Monday intervals (separate session, later in the day) through Week 43. Drop it only if sleep, morning heart rate, or joints degrade. If Phase A finished at 16+ miles/week pain-free, easy runs in Phase B may each be extended by up to 1 mile; hard-day structure stays unchanged. From Week 34: hard swim days begin with a nonstop 500-yd warm-up (§3). Deload weeks and Weeks 45–47: maintenance calories.</p>
+    </div>
+
+    <h3 class="blk">Weeks 22–25</h3>
+    <div class="scroll"><table>
+      <tr><th>Wk</th><th>Dates</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+      <tr><td class="wk">22</td><td class="wk">Nov 30–Dec 6</td><td>Easy run 2.5</td><td>Swim skills 1000 + full-body lift</td><td>Easy run 2.5</td><td>Swim skills + 4×100</td><td>Easy run 3 + bursts</td><td>Speed play 8×1 + easy swim 1000</td></tr>
+      <tr><td class="wk">23</td><td class="wk">Dec 7–13</td><td>Easy run 3</td><td>Swim skills 1000 + lift</td><td>Easy run 3</td><td>Swim skills + 4×100</td><td>Easy run 3 + bursts</td><td>Speed play 8×1 + easy swim 1000</td></tr>
+      <tr><td class="wk">24</td><td class="wk">Dec 14–20</td><td>Easy run 3</td><td>Swim skills 1200 + lift</td><td>Easy run 3</td><td>Swim skills + 5×100</td><td>Easy run 3.5 + bursts</td><td>Speed play 10×1 + easy swim 1000</td></tr>
+      <tr class="off"><td class="wk">25</td><td class="wk">Dec 21–27</td><td>Easy run 2</td><td>Easy swim + light lift</td><td>Easy run 2</td><td>Easy swim</td><td>Stretch only</td><td>OFF — <b>DELOAD</b>, maintenance calories</td></tr>
+    </table></div>
+
+    <h3 class="blk">Weeks 26–29 — morning routine starts Mon Dec 28</h3>
+    <div class="scroll"><table>
+      <tr><th>Wk</th><th>Dates</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+      <tr class="test"><td class="wk">26</td><td class="wk">Dec 28–Jan 3</td><td>Track 6×400</td><td>Swim 50-50 ×8 + lift</td><td>Easy run 3</td><td>Swim 5×100 goal pace</td><td>Easy run 3 + bursts</td><td><b>Jan 2 — TEST 5</b> (18th birthday)</td></tr>
+      <tr><td class="wk">27</td><td class="wk">Jan 4–10</td><td>Track 6×400</td><td>Swim 50-50 ×10 + lift</td><td>Easy run 3</td><td>Swim 5×100 goal pace</td><td>Easy run 3.5 + bursts</td><td><b>4-MILE BENCHMARK (first timed 4-mile)</b> + easy swim 800</td></tr>
+      <tr><td class="wk">28</td><td class="wk">Jan 11–17</td><td>Track 8×400</td><td>Swim 50-50 ×10 + lift</td><td>Easy run 3.5</td><td>Swim 5×100 goal pace</td><td>Easy run 4 + bursts</td><td>Hard run 20 + swim 1000 nonstop</td></tr>
+      <tr class="off"><td class="wk">29</td><td class="wk">Jan 18–24</td><td>Easy run 2.5</td><td>Easy swim + light lift</td><td>Easy run 2.5</td><td>Easy swim</td><td>Stretch only</td><td>OFF — <b>DELOAD</b></td></tr>
+    </table></div>
+
+    <h3 class="blk">Weeks 30–33 — fins and boots begin</h3>
+    <div class="scroll"><table>
+      <tr><th>Wk</th><th>Dates</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+      <tr class="test"><td class="wk">30</td><td class="wk">Jan 25–31</td><td>Track 5×800</td><td>Swim 50-50 ×10 + fins 75/25 ×6 + lift</td><td>Easy run 4</td><td>Swim 1500 nonstop + tread 3</td><td>Boots run 2 + bursts</td><td><b>TEST 6</b></td></tr>
+      <tr><td class="wk">31</td><td class="wk">Feb 1–7</td><td>Track 5×800</td><td>Swim 50-50 ×10 + fins 75/25 ×8 + lift</td><td>Easy run 4</td><td>Swim 1500 nonstop + tread 3</td><td>Boots run 2 + bursts</td><td>Long run 5 + easy swim</td></tr>
+      <tr><td class="wk">32</td><td class="wk">Feb 8–14</td><td>Track 6×800</td><td>Swim 3×200 goal pace + fins 75/25 ×10 + lift</td><td>Easy run 4</td><td>Swim 1600 nonstop + tread 4</td><td>Boots run 2.5 + bursts</td><td>Pyramid + <b>1,000m fin swim baseline</b></td></tr>
+      <tr class="off"><td class="wk">33</td><td class="wk">Feb 15–21</td><td>Easy run 3</td><td>Easy swim + easy fins + light lift</td><td>Easy run 3 + easy swim 600</td><td>Easy swim</td><td>Stretch only</td><td>OFF — <b>DELOAD</b></td></tr>
+    </table></div>
+
+    <h3 class="blk">Weeks 34–38 — two sessions a day begin</h3>
+    <div class="scroll"><table>
+      <tr><th>Wk</th><th>Dates</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+      <tr class="test"><td class="wk">34</td><td class="wk">Feb 22–28</td><td>AM Track 6×800</td><td>AM swim 5×100 goal + fins 75/25 ×10 · PM lift</td><td>Hard run 20</td><td>AM swim 2000 nonstop + tread 5 · PM Pyramid</td><td>Easy run 4 + bursts</td><td><b>4-MILE TEST 1</b></td></tr>
+      <tr class="test"><td class="wk">35</td><td class="wk">Mar 1–7</td><td>AM Track 6×800</td><td>AM swim 50-50 ×10 + fins 75/25 ×12 · PM lift</td><td>Hard run 20</td><td>AM swim 2000 + tread 5</td><td>Easy run 3 (very easy)</td><td><b>TEST 7</b></td></tr>
+      <tr><td class="wk">36</td><td class="wk">Mar 8–14</td><td>AM hill sprints 8×45 sec</td><td>AM Swim-PT ×10 · PM lift</td><td>Hard run 22</td><td>AM swim 2000 + tread 5 · PM Pyramid</td><td>Easy run 4 + bursts</td><td>Long run 6–7 + easy swim</td></tr>
+      <tr><td class="wk">37</td><td class="wk">Mar 15–21</td><td>AM Track 8×800</td><td>AM swim 5×100 goal + fins 1000 nonstop · PM lift</td><td>Hard run 22</td><td>AM swim 2200 + tread 5</td><td>Easy run 4 + bursts</td><td><b>Grinder, half size (50/100/150)</b></td></tr>
+      <tr class="off"><td class="wk">38</td><td class="wk">Mar 22–28</td><td>Easy run 3</td><td>Easy swim + easy fins</td><td>Easy run 3</td><td>Easy swim</td><td>Stretch only</td><td>OFF — <b>DELOAD</b>, maintenance calories all week</td></tr>
+    </table></div>
+
+    <h3 class="blk">Weeks 39–43 — highest volume</h3>
+    <div class="scroll"><table>
+      <tr><th>Wk</th><th>Dates</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+      <tr class="test"><td class="wk">39</td><td class="wk">Mar 29–Apr 4</td><td>AM Track 8×400</td><td>AM swim 3×200 goal + fins 1200 nonstop · PM lift</td><td>Hard run 25</td><td>AM fins 1 mile nonstop + tread 5</td><td>Easy run 4.5 + bursts</td><td><b>4-MILE TEST 2</b></td></tr>
+      <tr class="test"><td class="wk">40</td><td class="wk">Apr 5–11</td><td>AM Track 8×400</td><td>AM swim 50-50 ×10 + fins 1200 · PM lift</td><td>Hard run 25</td><td>AM fins 1.25 mi nonstop + tread 5</td><td>Easy run 3 (very easy)</td><td><b>TEST 8</b></td></tr>
+      <tr><td class="wk">41</td><td class="wk">Apr 12–18</td><td>AM Track 10×400</td><td>AM swim 3×200 goal + fins 1500 · PM lift</td><td>Hard run 25</td><td>PM <b>Grinder, full (100/200/300)</b></td><td>Easy run 4.5 + bursts</td><td>Long run 7–8 + easy swim</td></tr>
+      <tr class="off"><td class="wk">42</td><td class="wk">Apr 19–25</td><td>Easy run 3</td><td>Easy swim + easy fins</td><td>Easy run 3</td><td>Easy swim</td><td>Stretch only</td><td>OFF — <b>DELOAD</b></td></tr>
+      <tr class="test"><td class="wk">43</td><td class="wk">Apr 26–May 2</td><td>AM Track 8×400</td><td>AM swim 3×200 goal + fins 1500 · PM lift</td><td>Hard run 25</td><td>AM <b>fins 2 miles nonstop</b> (pool, or open water with a partner)</td><td>Easy run 3 (very easy)</td><td><b>May 1 — TEST 9</b></td></tr>
+    </table></div>
+
+    <h3 class="blk">Weeks 44–47 — taper: volume −40–60%, keep intensity and session count</h3>
+    <div class="scroll"><table>
+      <tr><th>Wk</th><th>Dates</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+      <tr class="test"><td class="wk">44</td><td class="wk">May 3–9</td><td>Easy run 3 + easy swim 800</td><td><b>4-MILE TEST 3</b></td><td>Swim 6×50 goal pace</td><td>Easy swim + easy fins</td><td>Easy run 3 + bursts</td><td>Long run 5 easy — total volume −30%</td></tr>
+      <tr><td class="wk">45</td><td class="wk">May 10–16</td><td>Track 4×400 relaxed</td><td>Swim 6×50 + light lift</td><td>Easy run 3</td><td>Easy swim 800 + tread 3</td><td>Easy run 2 + bursts</td><td>OFF — volume −50%, maintenance calories from here</td></tr>
+      <tr class="test"><td class="wk">46</td><td class="wk">May 17–23</td><td>Track 3×400 smooth</td><td>Swim 6×50 easy-fast</td><td>Easy run 2 + easy swim 500 (technique only)</td><td>Easy swim 600</td><td>OFF (walking only)</td><td><b>May 22 — FINAL TEST, fully rested</b></td></tr>
+      <tr class="test"><td class="wk">47</td><td class="wk">May 24–27</td><td>OFF</td><td><b>May 25 — 1,000m fin swim test</b></td><td>Easy run 2</td><td>May 27 — easy 2-mile run. Program complete.</td><td>—</td><td>—</td></tr>
+    </table></div>
+
+    <div class="card">
+      <h2>After Week 47 — the hold week (repeat until ship date)</h2>
+      <p class="note">The program does not end into nothing. From May 28 until the day you ship, repeat this week on loop. It holds every adaptation at Week-44 cost.</p>
+      <p>Mon: Track 6×400 or 4×4 · morning PT. Tue: swim 1,500 (middle 500 at goal pace) + fins 800. Wed: easy run 3–4 + morning PT. Thu: swim 1,000 easy + tread 5. Fri: easy run 3 + bursts + morning PT + full-body lift. Sat: rotate weekly — full mock PST / 4-mile timed / 2-mile fin swim. Sun: off. First Saturday of every month = full PST, entered in Calibrate, backed up.</p>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= PAGE 3: SECTIONS ================= -->
+<section id="pg-sections" class="page">
+
+  <div class="card">
+    <h2>Sections</h2>
+    <p class="note">Tap a section to open it. These explain every workout and rule used in the charts.</p>
+  </div>
+
+  <details>
+    <summary><span class="no">§1</span> Warm-up and cool-down <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p>Before every session: 3–4 minutes easy jog or easy swim, leg swings, lunges, arm circles, then 2–3 short speed-ups. Before tests and track days this is mandatory.</p>
+      <p>After: 3–5 minutes easy, then the day's stretching.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">§2</span> Running <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p>Paces come from the most recent 1.5-mile test. Update after every test.</p>
+      <div class="scroll mid"><table>
+        <tr><th>Latest 1.5-mi time</th><th>Easy pace per mile</th><th>Hard-run pace per mile</th><th>400m lap time</th></tr>
+        <tr><td>12:00</td><td>10:00–10:30</td><td>~8:50</td><td>1:52</td></tr>
+        <tr><td>11:00</td><td>9:20–9:50</td><td>~8:10</td><td>1:43</td></tr>
+        <tr><td>10:00</td><td>8:40–9:10</td><td>~7:30</td><td>1:33</td></tr>
+        <tr><td>9:30</td><td>8:20–8:50</td><td>~7:10</td><td>1:28</td></tr>
+        <tr><td>9:00</td><td>8:00–8:30</td><td>~6:50</td><td>1:24</td></tr>
+      </table></div>
+      <p><b>Treadmill rules.</b> The treadmill is a precision tool for intervals and a backup for weather — not a replacement for ground running.</p>
+      <ul>
+        <li><b>Always set 1% incline.</b> At interval speeds, 1% grade reproduces the energy cost of outdoor running (no air resistance on a belt). Flat treadmill running is measurably easier than the road.</li>
+        <li><b>Speed settings:</b> the Calibrate tab computes your current easy-run and interval mph from your latest test — use those numbers. Trust heart rate and the talk test over the display; belts are often miscalibrated.</li>
+        <li><b>4×4 on incline:</b> during high-volume or deficit weeks, run the 4×4 at 3–5% incline and a slower speed — heart rate still reaches 90–95% with far less impact on the legs.</li>
+        <li><b>Limits:</b> no more than ~half of weekly running indoors. All tests, benchmarks, and boots runs happen outdoors. From Week 34 on, move interval days outdoors too — the belt holds pace for you, and the skill being trained is holding it yourself. The test is run on ground.</li>
+      </ul>
+      <p><b>Intensity is set by heart rate, not feel.</b> Easy runs are Zone 1 (&lt;75% HRmax) — hold it even if it feels too slow. "Hard run" days are VO2max intervals run as the 4×4 protocol in Zone 3 (90–95% HRmax). Track repeats are Zone 3. There is almost no Zone 2 "moderate" running in this plan by design. Full zone table and reasoning: Science tab (A) and (B).</p>
+      <ul>
+        <li>"Hard run" in the charts = the 4×4 session (Science tab B): four 4-min efforts at 90–95% HRmax, 3 min easy jog between, after a 10-min warm-up. Twice a week maximum. On beaten-up legs, substitute short intervals (15/15 or 30/30) or run the 4×4 on an incline.</li>
+        <li>Track laps are run at goal pace exactly — not faster, not slower. The purpose is to memorize how goal pace feels (breathing, stride, arm swing) so it can be reproduced on test day within the first 100m.</li>
+        <li>Cadence: ~170–180 short, quiet steps per minute on all runs (count steps for 30 seconds occasionally). Quicker, lighter steps reduce per-step bone and joint load — relevant to the stress-fracture profile in Section 12.</li>
+        <li>Weekly mileage increases no more than ~10% at a time. In 874 GPS-tracked novice runners, jumps above 30% raised injury risk versus staying under 10%; and simply halving beginners&#8217; starting distance cut running injuries by roughly a third in a randomized trial. Small early weeks are the protective dose (Science tab, G).</li>
+        <li>Two pairs of running shoes, rotated. Replace a pair after 300–500 miles. Track shoe mileage in the logbook.</li>
+        <li>Soft surfaces (grass, dirt, track) when available.</li>
+        <li>Boots: buy military-style boots, wet them, and walk in them for a week before the first boots run. Boots runs stay easy and stay on grass or sand.</li>
+        <li><b>Heat (July–September):</b> run early morning. Expect heart rate 5–10 bpm higher at the same pace in heat — trust the talk test over the zone numbers on hot days, and add salt and water around sessions. Heat-adapted training raises blood plasma volume; the fitness carries into fall. Move a session to the treadmill only when conditions are genuinely unsafe, not merely uncomfortable.</li>
+        <li>Sharp pain in a bone (shin, top of foot, hip): stop that run. See §12.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">§3</span> Swimming <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p><b>Standards to reach:</b></p>
+      <ol>
+        <li>Cross a 25-yd pool in 5–6 strokes (counting the push-off glide). Count strokes every session.</li>
+        <li>Hold 50 yards in 50 seconds. Held for 500 yards, that is 8:20. Pace checkpoints: 100 yd = 1:40, 200 = 3:20, 300 = 5:00.</li>
+      </ol>
+      <p><b>Volume:</b> getting the 500 into the low-8 range requires swimming most days. From Week 26, every session is at least 1,000 yards; documented programs that produced 10:00→8:00 improvements used 1,000–1,500 yards per session, 4–6 days per week. The optional 5th swim exists for this reason. More swim volume is the one place where adding is allowed, if sleep and morning heart rate stay normal.</p>
+      <p><b>The stroke (Combat Sidestroke). One cycle = pull → breathe → kick → glide:</b></p>
+      <ol>
+        <li>Lie on your side, bottom arm extended forward, ear on that shoulder, top arm on the hip. Body long and flat.</li>
+        <li>Pull: the top arm sweeps down to the hip; turn the mouth up and breathe during the pull.</li>
+        <li>Kick: scissor — top leg forward, bottom leg back — snap together. Small, no splash.</li>
+        <li>Glide 2–3 seconds. Head stays low.</li>
+      </ol>
+      <p>Off every wall: underwater push-off in a stretched position, one double-arm pull, then surface.</p>
+      <p>Reference: the official Combat Sidestroke guide and videos at sealswcc.com. Four to six sessions with any qualified swim coach will fix faults faster than self-correction.</p>
+      <p><b>Monthly video check (first Friday of each month):</b> film the stroke side-on from deck level, one length. Compare against the official CSS video. Identify the single largest fault — usually head position, a rushed glide, or a wide kick — and make it the swim-skills focus for that month. An 11:00 500 at your size is a technique number, not a fitness number; this check is how the technique debt gets found and paid.</p>
+      <p><b>Workouts named in the charts:</b></p>
+      <ul>
+        <li><b>Swim skills:</b> lengths with one focus at a time (glide only, kick only). Track stroke count.</li>
+        <li><b>50-50 ×10:</b> 50 yd freestyle fast, then 50 yd sidestroke at goal pace with no rest between them; rest 3–4 breaths (~10 sec); repeat 10 times.</li>
+        <li><b>Goal-pace sets (5×100, 3×200):</b> at 50-sec-per-50 pace, 20–30 seconds rest.</li>
+        <li><b>Nonstop swims:</b> continuous. Early weeks may alternate sidestroke and freestyle by 100s; from Week 30, mostly sidestroke.</li>
+        <li><b>Swim-PT ×10:</b> 100 yd swim, exit, 15–20 push-ups + 25 sit-ups, re-enter. Ten rounds.</li>
+        <li><b>Fins 75/25:</b> stiff scuba-style fins (rocket/jet type). 75 yd sidestroke + 25 yd on the back, easy kick, no stopping. Kick from the hips, knees nearly straight. Daily ankle stretching once fin work starts.</li>
+        <li><b>Tread:</b> vertical, light kick. Build to 5 minutes with hands out of the water.</li>
+      </ul>
+      <p><b>Diagnostic rule:</b> when stroke count on a length rises more than 2 above normal, that distance is the current failure point. Give that distance 5–6 repeats in the next block of sessions. During tests, have someone record the time for every 50 yards; the lap where pace drops shows where conditioning ends.</p>
+      <p>From Week 34: hard swim days open with a nonstop 500-yd warm-up at easy pace. Purpose: the test distance becomes routine.</p>
+      <p>Swim stalled? The Adjust tab has a fault finder that maps symptoms to the exact fix drill.</p>
+      <div class="warn"><b>Safety rule, no exceptions:</b> breath-holding and underwater work only with a coach or lifeguard actively watching. Never alone. Never after rapid deep breathing. Open water always with a partner. Shallow-water blackout occurs without warning.</div>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">§4</span> Test execution strategy <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p>The most common cause of underperformance on the PST is pacing error, not fitness.</p>
+      <ul>
+        <li><b>Swim:</b> even 50-yd splits at goal pace from the first lap. Do not open faster than goal pace. A fast first 100 costs more time at the end than it gains at the start, and drains the other four events.</li>
+        <li><b>Push-ups:</b> hands placed level with the chest, just outside shoulder width. Hands too high or too low reduces reps.</li>
+        <li><b>Sit-ups:</b> treat 2 minutes as four 30-second blocks. For an 80–100 target: 20–25 reps per block. Do not open with 30–35 in the first block. If failing near the end, slide the hips back 2–3 inches; the angle change typically allows 5–10 more reps.</li>
+        <li><b>Pull-ups:</b> steady rhythm; no time limit, so short pauses at the top of the hang are allowed. Do not rush.</li>
+        <li><b>Rep style on test day:</b> let gravity lower the body on push-ups, sit-ups, and pull-ups — exert only on the way up. (Training is the opposite: controlled lowering builds strength. Test day is for saving energy.)</li>
+        <li><b>The 10-minute break before the run:</b> 1) stretch arms, chest, shoulders, stomach; 2) jog easy 2–3 minutes to move blood to the legs; 3) stretch legs 3–5 minutes; keep shaking the arms out. Blood pooled in the upper body after PT is why the first half-mile feels the worst; this procedure reduces it.</li>
+        <li><b>Run:</b> settle onto goal pace within the first 100m. Even splits. Do not open the first lap fast.</li>
+        <li><b>Fuel:</b> hydrate normally beforehand; sip water with electrolytes and some carbohydrate (diluted sports drink) during the breaks, especially before the run.</li>
+        <li>From Test 5 on, wear the same clothes and follow the same meal and warm-up every test, so the final one contains nothing new.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">§5</span> Pull-ups <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p><b>Until 8 strict reps (Phase A):</b> Mon/Wed/Fri, 5–8 small sets of about half of max, spread across the day, never to failure. Add slow lower-downs: jump to the top, lower for 5 seconds.</p>
+      <p><b>From Week 26, with 8+ strict reps — Armstrong routine,</b> every weekday morning after the push-up sets:</p>
+      <ul>
+        <li><b>Mon:</b> 5 max-effort sets, 90 sec rest.</li>
+        <li><b>Tue:</b> pyramid — 1 rep, rest 10 sec; 2 reps, rest 20 sec; 3 reps, rest 30 sec; continue until a number is missed; rest; one final max set.</li>
+        <li><b>Wed:</b> 9 sets of (max ÷ 3, rounded up), 60 sec rest: 3 sets normal grip, 3 sets close underhand grip, 3 sets wide grip.</li>
+        <li><b>Thu:</b> same set size as Wed, as many sets as possible, 60 sec rest. The week this exceeds 9 sets, add 1 rep to the set size.</li>
+        <li><b>Fri:</b> repeat the hardest day of the week.</li>
+      </ul>
+      <p>Weekends off the bar. Deload weeks: 2 light days. If elbows or shoulders are sore two sessions in a row, drop one day and reduce set sizes for that week.</p>
+      <p><b>Form:</b> full hang at the bottom, chin over the bar, shoulders pulled down before the arms bend, no swinging.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">§6</span> Push-ups <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p><b>Morning routine</b> (Phase B weekdays; Phase A Mon/Wed/Fri from Week 13): 3 max-effort sets spread over ~10 minutes.</p>
+      <p><b>Training form:</b> body straight, chest to fist height, full lockout, controlled lowering. Reps that would not count at an official test are not counted in the log.</p>
+      <p>If shoulders ache: hands directly under shoulders, elbows closer to the body, and skip one morning.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">§7</span> Sit-ups, Pyramid, Grinder <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p><b>Sit-ups:</b> feet anchored, arms crossed on chest, up until elbows touch thighs, down until shoulder blades touch. Two 2-minute rounds at steady rhythm, using the 30-second block pacing from §4. Afterward: plank 3×45 sec, flutter kicks 3×20.</p>
+      <p><b>Pyramid:</b> count 1-2-3-4-5-4-3-2-1. Each number = that many pull-ups, ×2 push-ups, ×3 sit-ups. Progress toward a peak of 10 by Weeks 39–43. Minimal rest.</p>
+      <p><b>Grinder:</b> 100 pull-ups, then 200 push-ups, then 300 sit-ups, each in as few sets as possible, with a 400m run (~90–100 sec) between every set. Week 37 is half size; Week 41 is full size. Eat and sleep normally the day before; treat it as a dress rehearsal for BUD/S-style volume.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">§8</span> Grip, obstacle prep, knots <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p>Twice a week, ~5 minutes after lifting:</p>
+      <ul>
+        <li>Bar hang: 2 rounds, maximum time; build toward 60–90 seconds</li>
+        <li>Towel over the bar, hang or rows: 2 rounds</li>
+        <li>Heavy dumbbell carries: 3 walks of ~40 steps</li>
+        <li>Once a week if available: monkey bars (2–3 passes) or a climbing rope (legs do the work: trap the rope between the feet, stand up, re-grip)</li>
+      </ul>
+      <p><b>Knots:</b> First Phase at BUD/S includes an underwater knot-tying test on five knots — bowline, square knot, becket's bend, clove hitch, and right angle. Learn all five on dry land now: two 5-minute practice blocks per week with a short piece of rope, starting Phase B. Goal by May: tie each one in under 30 seconds without looking. Free instructions and videos: search "BUD/S five knots" (Art of Manliness and ITS Tactical both have step-by-step guides).</p>
+      <div class="warn">The underwater version is trained only at BUD/S under instructors. Do not self-practice the underwater part.</div>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">§9</span> Lifting <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p><b>Phase A — Lift A / B / C, full-body days (Mon / Wed / Fri).</b> Not push-pull-legs: each day trains the whole body with a different emphasis, so every muscle is hit 2–3 times per week — the frequency the hypertrophy research supports (Science tab, D) — and weekly volume lands at roughly 9–14 hard sets per muscle. Stop compound lifts 1–3 reps before failure; take isolation work closer to failure. Progression: when the top of a rep range is reached with good form, add weight.</p>
+      <ul>
+        <li><b>Lift A (Mon) — squat emphasis:</b> squat 4×5–6 · bench press 4×6–8 · one-arm dumbbell row 3×8–10 · Romanian deadlift 3×8 · lateral raises 3×12–15 · curls 2×10–12 · calf raises 3×12</li>
+        <li><b>Lift B (Wed) — press emphasis:</b> overhead press 4×6–8 · weighted pull-ups 4×5–8 · walking lunges 3×10 per leg · incline dumbbell press 3×8–10 · barbell row 3×8 · triceps 2×10–12 · toe raises 3×15 · light neck work</li>
+        <li><b>Lift C (Fri) — hinge/pull emphasis:</b> trap-bar or conventional deadlift 3×5 · dips 3×8–12 · chin-ups 3×8–10 · Bulgarian split squats 2×10 per leg · dumbbell bench 3×10 · face pulls 3×15 · curls 2×12 · calf raises 3×12</li>
+      </ul>
+      <p>Ordering rule: the deadlift and squat stay at moderate effort (never grinding reps) because runs follow the next morning. If Thursday speed play feels dead-legged two weeks in a row, lighten Wednesday lunges.</p>
+      <p>An existing lifting program may be substituted, provided calf raises, toe raises, neck work, and carries stay in.</p>
+      <p><b>Phase B, one 40-minute full-body day:</b> squats 3×5 · shoulder press 3×6–8 · rows 3×8 · lunges 2×10 per leg · heavy carries 3×40 steps · calves, toes, neck. Weight stays heavy, total sets stay low. Purpose is keeping muscle during the cut, not building.</p>
+      <p>These lifting days are also the injury-prevention program: in meta-analysis of randomized trials, strength training cut sports injuries to less than a third and nearly halved overuse injuries — protection Phase B&#8217;s running load will spend. Stretching remains in the plan for mobility and fin flexibility, not injury statistics (Science tab, G).</p>
+      <p><b>Strength benchmarks by May</b> (durability reference, not a priority in the final 6 weeks): deadlift ~1.5× bodyweight for 3 reps; squat ~1.25× bodyweight for 5; carry half of bodyweight per hand for 40 steps.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">§10</span> Food <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p><b>Phase A:</b> 300–500 calories above maintenance. Protein 150–170 g/day. Weigh 3 mornings a week; use the weekly average; gain no more than ~1 lb/week. In the randomized athlete weight-gain trial, a guided ~500 kcal surplus added weight faster than eating freely — but the difference was fat, not muscle. The +300–500 cap is where the evidence says useful stops (Science tab, G). Note: 153→180 by Week 21 requires ~1.3 lb/week, which adds meaningful fat. Arriving at Week 22 at 172–176 with less fat is an equal or better outcome.</p>
+      <p><b>Phase B:</b> Weeks 22–23 at maintenance — two purposes: the body stabilizes after five months of surplus, and logged intake at stable weight pins the true maintenance number the deficit is measured from. From Week 24: 300–400 below that number — the slow-loss protocol shown to preserve muscle and strength in athletes. Hard cap: never lose faster than 0.7% of bodyweight per week (~1.2 lb/week at 175 lb). Approximate intake 2,900–3,200; not below ~2,800 during Weeks 34–43. Protein RISES in a deficit: 2.2–2.4 g per kg — practically 175–190 g/day (higher protein during energy restriction demonstrably protects muscle; above ~2.4 g/kg adds nothing). Carbohydrates placed around the biggest sessions. Deload weeks, Week 38, and Weeks 45–47: maintenance.</p>
+      <p><b>Bone support:</b> in a randomized trial of 5,201 Navy recruits, 2,000 mg calcium + 800 IU vitamin D daily reduced stress fractures by 20% in 8 weeks of basic training. Floor: 1,300 mg calcium/day from food (3–4 dairy or fortified servings). Through Phase B — deficit plus peak mileage plus winter — a daily calcium + vitamin D supplement is directly evidence-supported; confirm dose at the sports physical.</p>
+      <p><b>Example Phase B day (~3,000 cal, ~170 g protein):</b> breakfast — 4 eggs, 1 cup oats with milk and a banana. Lunch — 8 oz chicken, 1.5 cups rice, vegetables, olive oil. Pre-workout — Greek yogurt and fruit. Dinner — 8 oz ground beef or fish, potatoes, vegetables. Evening — cottage cheese or a peanut-butter sandwich and milk. Adjust portions to hit the weekly weight trend.</p>
+      <p><b>Stop-the-cut signals — if two appear, eat at maintenance for 1–2 weeks:</b> times regress for 2+ weeks · morning heart rate up 5–8 beats for 3+ days · feeling cold constantly · broken sleep · accumulating small injuries · aversion to every session.</p>
+      <p><b>Supplements:</b> none required. Creatine 3–5 g/day is legal and supported by evidence, optional. Nothing else. NSW drug-tests; a positive test ends the process.</p>
+      <p><b>Hydration:</b> water through the day; add electrolytes around long or hot sessions.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">§11</span> Breathing <span class="plus">+</span></summary>
+    <div class="dbody">
+      <ul>
+        <li>Easy runs: in 3 steps, out 3 steps. Hard runs and track: in 2, out 2.</li>
+        <li>Swimming: exhale continuously whenever the face is in the water; the surface moment is inhale only.</li>
+        <li>Box breathing, nightly 5 minutes and between test events: in 4 seconds, hold 4, out 4, hold 4.</li>
+        <li>Fast reset between hard reps: two quick nasal inhales, one long exhale.</li>
+        <li>After hard efforts: hands on head, nasal inhale, long exhale.</li>
+        <li>Breath-hold tables are not part of this program unsupervised. See the §3 safety rule.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">§12</span> Injury prevention and monitoring <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p>Roughly 1 in 5 BUD/S students develops a stress fracture; the main drivers reported by NSW medical staff are ramping too fast, poor recovery, and under-eating. This program controls all three; the items below are the remaining margin.</p>
+      <p><b>Circuit, twice a week after lifting (~10 min):</b> slow-lowering calf raises 3×12 (1 sec up, 5 sec down) · bent-knee calf raises 2×15 · toe raises 3×15 · single-leg balance, eyes closed, 2×30 sec per leg · side-lying leg lifts 2×15 per side.</p>
+      <p><b>Bone loading (from Week 9):</b> before two runs per week, 2×10 pogo hops on grass — stiff ankles, quiet landings, minimal knee bend. Brief jumping is one of the few proven bone-strengthening stimuli; directly relevant to a frame that gained 40+ lb quickly and is adding running load on top. Takes 90 seconds. Skip on deload weeks.</p>
+      <p><b>Daily 10-minute stretch:</b> calves and ankles first (running and fins depend on them), hip flexors, hamstrings, chest doorway stretch, shoulder circles with a band. The free NSW Injury Prevention Guide (sealswcc.com) has a full illustrated series.</p>
+      <p><b>Morning heart rate:</b> 3× per week, 60-second count before getting out of bed, logged. A rise of 5–8 beats for 3+ days = take an easy day and check sleep and food.</p>
+      <p><b>Stop rules:</b> sharp bone pain while running — stop that run; swim/bike only until pain-free for 7 days; still present at 10 days — imaging. Limping, swelling, or altered stride — same. Elbow or shoulder pain from bar work two sessions in a row — remove a day.</p>
+      <p>Sports physical before December. Cold exposure: end showers with 1–3 minutes cold from Phase B onward. Cold open water only briefly and never alone.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">§13</span> Sick days, missed days, substitutions <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p><b>Sick:</b> symptoms above the neck only (runny nose, mild sore throat) — do the easy version or half the session. Fever, chest congestion, or body aches — full rest until 24 hours fever-free, then two easy days before resuming the chart.</p>
+      <p><b>Missed day:</b> it is skipped, not made up. Never stack two hard run days back-to-back to compensate.</p>
+      <p><b>When time is short, priority order:</b> 1) test days, 2) track and hard runs, 3) swims (minimum 3 per week, 1,000+ yd each), 4) lifting, 5) everything else. Sessions may move within the week if the hard-easy pattern is kept.</p>
+      <p>Every rule in this section is automated in the <b>Adjust</b> tab — pick the situation, get the decision.</p>
+      <p><b>Missed target at a test:</b> repeat the previous block's Saturday sessions for two weeks, retest. <b>Injury during prep:</b> physician, keep training whatever is pain-free, rebuild the run ladder from two weeks below the stopping point.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">§14</span> Mental skills <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p>These four are also what the C-SORT measures (§16):</p>
+      <ol>
+        <li><b>Segmenting:</b> attention on the next rep, lap, or meal only.</li>
+        <li><b>Rehearsal:</b> from Week 22, twice a week, 5 minutes — run the full test mentally, including the point of maximum discomfort, holding pace through it.</li>
+        <li><b>Cue phrase:</b> one short line used at the moment of wanting to slow, practiced in every track session.</li>
+        <li><b>Breath control under load:</b> box breathing between events, the fast reset between reps.</li>
+      </ol>
+      <p>Write the reason for doing this on a card; review it on deload weeks.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">§15</span> Test protocol and logging <span class="plus">+</span></summary>
+    <div class="dbody">
+      <ol>
+        <li>Warm-up (§1)</li>
+        <li>500-yd swim (sidestroke or breaststroke)</li>
+        <li>Rest 10 min</li>
+        <li>Push-ups, 2 min</li>
+        <li>Rest 2 min</li>
+        <li>Sit-ups, 2 min</li>
+        <li>Rest 2 min</li>
+        <li>Pull-ups, max</li>
+        <li>Rest 10 min (§4 procedure)</li>
+        <li>1.5-mile run</li>
+      </ol>
+      <p>Identical order and rests every time.</p>
+      <p><b>Log format, one line per test:</b> date | swim time + lap splits | push | sit | pull | run | bodyweight | sleep hours | notes. Between tests, log daily: session done, distances/times, morning heart rate, weight (3×/wk).</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">§16</span> Selection process and paperwork <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p>Selection is a draft: contracts go to the strongest combined package of PST scores, ASVAB scores, and C-SORT, nationwide.</p>
+      <p><b>ASVAB:</b> required line scores for the SEAL (SO) rating — GS+MC+EI ≥ 170, or VE+MK+MC+CS ≥ 220 (request the Coding Speed test at MEPS; without it only the first combination counts). Candidates who complete BUD/S have historically averaged well above the Navy-wide minimum. Study 20–30 minutes, 3 evenings a week, from this summer. Confirm current requirements with the recruiter.</p>
+      <p><b>C-SORT:</b> a one-time computerized resilience test taken at the recruiting stage. It cannot be retaken. It measures goal-setting, self-talk, breath control, and response to stress — the §14 skills. Take it only after months of that practice, on a full night's sleep. A low band can only be offset afterward by improving PST run and swim times.</p>
+      <p><b>Timeline:</b></p>
+      <ul>
+        <li><b>Summer 2026:</b> sports physical, eye exam (standards: uncorrected no worse than 20/40 best eye / 20/70 worst eye, correctable to 20/25, normal color vision), dental check, gather childhood medical records for MEPS.</li>
+        <li><b>Fall 2026:</b> recruiter visit; request the SEAL Challenge (SO) contract; Delayed Entry Program paperwork can begin at 17 with parental consent; ask for the NSW coordinator/mentor, who administers official scored PSTs (typically available 2–3 times per month in DEP).</li>
+        <li><b>Jan 2, 2027:</b> age 18; Test 5.</li>
+        <li><b>May 22:</b> final PST.</li>
+        <li><b>After May 27:</b> hold Week-44-level training until ship date. The NSW Prep exit test (1,000m fin swim ≤20:00, 4-mile run ≤31:00, 70 push-ups, 60 sit-ups, 10 pull-ups) applies after boot camp.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">§17</span> Sources <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p>sealswcc.com (official): PST calculator and standards, 26-week Physical Training Guide, Combat Sidestroke guide and videos, Injury Prevention Guide, Nutrition Guide. MILPERSMAN 1220-410: PST standards instruction. navyseals.com: ASVAB line scores, C-SORT, vision standards. Stew Smith (stewsmithfitness.com / military.com): 50-50 workout, pacing method, PST clinic, stroke-count standards. Armstrong pull-up program (armstrongpullupprogram.com). Art of Manliness / ITS Tactical: the five BUD/S knots. NSW/prep-school reporting: stress-fracture rates, Hell Week and pipeline structure.</p>
+    </div>
+  </details>
+
+</section>
+
+<!-- ================= PAGE 4: SCIENCE ================= appended as new tab -->
+<section id="pg-science" class="page">
+
+  <div class="card">
+    <h2>Why the plan is built this way</h2>
+    <p class="note">Every rule below traces to peer-reviewed research or official NSW material. This page is the engine under the charts. Nothing here is optional reading; it defines how to run the sessions correctly. Sources are numbered and listed at the bottom.</p>
+  </div>
+
+  <details open>
+    <summary><span class="no">A</span> Intensity zones — the core of everything <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p>Endurance training works only if intensity is controlled. The research-backed model is <b>polarized (roughly 80/20):</b> about 80% of weekly endurance time at genuinely easy intensity, about 20% hard, and almost nothing in the moderate middle. In controlled trials this outperformed threshold-focused and moderate-continuous training for VO2max and time-trial performance [1][2][3]. Most people train their easy days too hard and their hard days too easy, landing in an unproductive middle. Do not.</p>
+      <p>Three zones, set by heart rate. First estimate max heart rate (HRmax). Best: do a hard 4-minute effort test and note the highest HR seen. Rough fallback: 208 − (0.7 × age) = ~196 at age 18. Use a chest-strap monitor; wrist optical is inaccurate at high intensity.</p>
+      <div class="scroll mid"><table>
+        <tr><th>Zone</th><th>% HRmax</th><th>Feel / talk test</th><th>Used for</th></tr>
+        <tr><td><b>Z1 — Easy</b></td><td>&lt;75% (~145 bpm)</td><td>Full conversation, nose-breathing possible</td><td>All easy runs, long runs, recovery swims, warm-ups/cool-downs. ~80% of volume.</td></tr>
+        <tr><td><b>Z2 — Threshold</b></td><td>82–88% (~160–172)</td><td>3–4 words only</td><td>Used sparingly. Tempo/"hard run" pieces and goal-race-pace work. ~5%.</td></tr>
+        <tr><td><b>Z3 — VO2max</b></td><td>90–95% (~176–186)</td><td>Cannot speak</td><td>4×4 intervals, track repeats. ~15%.</td></tr>
+      </table></div>
+      <p><b>The rule this creates:</b> on easy days, hold Z1 even if it feels absurdly slow — this is where the aerobic base, mitochondria, and capillaries are built, and where injury risk is lowest [1][3]. On hard days, reach the true top zone. The charts already schedule ~4 easy sessions per hard session; the heart-rate monitor is what keeps you honest inside each one.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">B</span> The 4×4 protocol — how "hard run" days are now run <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p>The most-validated single session for raising VO2max — the ceiling on both run speed and fin-swim endurance — is the Norwegian 4×4 (Helgerud et al. 2007): four 4-minute efforts at 90–95% HRmax, each followed by 3 minutes of easy jogging. It raised VO2max ~7–10% in 8 weeks and beat both moderate-continuous and lactate-threshold training, driven by a larger increase in the heart's stroke volume [4][5][6].</p>
+      <p><b>Execution, whenever the charts say "Hard run":</b></p>
+      <ol>
+        <li>Warm up 10 minutes easy (§1).</li>
+        <li>4 minutes at 90–95% HRmax. First interval may start slightly lower (~88%) since HR lags; by minute 2 you should be at target and unable to talk.</li>
+        <li>3 minutes easy jog (do not stop moving).</li>
+        <li>Repeat for 4 total work intervals. Cool down 5–10 minutes.</li>
+        <li>Pace target: the last interval covers the same distance as the first. If distance drops off, the early ones were too fast.</li>
+      </ol>
+      <p>Frequency: 2 quality sessions per week is the validated dose; a third adds little and raises injury risk in a calorie deficit [7]. This is why the charts pair one 4×4 / track day with one shorter, sharper session, not three hard days.</p>
+      <p><b>Uphill option:</b> running the 4×4 on a hill or treadmill incline lets the heart, not the legs, be the limiter, and lowers impact — useful during high-volume or deficit weeks [4].</p>
+      <p><b>Short-interval alternative (the track 15/15 or 30/30):</b> 15–30 sec at ~95% HRmax, equal easy jog, repeated. Produces similar time-at-VO2max with less muscular strain [4][8]. Use it in place of a 4×4 when legs are beaten up but you still want quality.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">C</span> Swim speed — mechanics before conditioning <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p>Water resistance rises with roughly the square of speed, so in swimming, reducing drag returns more than adding power. Priorities, in order:</p>
+      <ol>
+        <li><b>Body line and drag:</b> stay horizontal and long, head neutral (looking down/forward, not up), hips high. A dropped head sinks the legs and multiplies drag. This is the largest, cheapest time saving.</li>
+        <li><b>Distance per stroke:</b> the stroke-count metric (5–6 per 25 yd) is a direct drag-and-efficiency measure. Lengthen the glide; add strokes only when speed genuinely requires it.</li>
+        <li><b>Streamline off every wall:</b> a tight underwater push-off is faster than any surface swimming; in a 25-yd pool this is ~20 free accelerations per 500.</li>
+        <li><b>Then conditioning:</b> only once the stroke is efficient does raising aerobic and threshold swim fitness (the 50-50 and goal-pace sets) convert directly to a faster 500.</li>
+      </ol>
+      <p><b>Combat Sidestroke specifics:</b> it is an underwater-recovery stroke — arms recover below the surface, keeping a low profile and pairing efficiently with fins later. The scissor kick's power comes from a full leg spread then a hard snap-together, followed by a glide. Breathing is timed to the top-arm pull with continuous exhalation underwater; breath-holding creates tension and buoyancy loss. Fixing faults by video or coach is faster than self-correction [official CSS guide, 9].</p>
+      <p><b>Volume basis:</b> documented 500-time drops from ~10:00 to ~8:00 used 1,000–1,500 yd per session, 4–6 days/week [9]. This is why swim frequency and the optional 5th swim exist; swim technique also decays fastest without frequent practice, so short frequent beats long infrequent.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">D</span> Muscle growth (Phase A) — evidence-based dose <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p>Given the goal of gaining from ~153 to ~180 while starting lean, hypertrophy is a Phase-A priority. The controlling variables from meta-analysis:</p>
+      <ul>
+        <li><b>Weekly volume:</b> ~10–20 hard sets per muscle group per week is the responsive range; growth rises ~0.2–0.4% per additional weekly set, plateauing and eventually reversing past ~20 as fatigue outpaces recovery [10][11][12]. Below ~5 sets is submaximal. The Phase-A lifting split is built to land each major muscle in this window.</li>
+        <li><b>Proximity to failure:</b> sets should stop within ~0–4 reps of failure (rep ranges ~6–20 all work if effort is high) [11]. On big compound lifts, keep 1–3 in reserve to protect the running/swimming; on isolation work, push closer to failure.</li>
+        <li><b>Frequency:</b> training each muscle ~2×/week matches or beats 1× at equal volume, mainly by splitting volume into more productive sessions [13].</li>
+        <li><b>Protein:</b> ~1.6 g/kg/day maximizes the muscle-building response; more is not harmful but adds little. At ~70–82 kg that is ~115–170 g/day — the plan's 150–170 g covers it with margin [14].</li>
+        <li><b>Energy:</b> a surplus of ~300–500 kcal/day maximizes muscle-to-fat gain ratio; larger surpluses add mostly fat you will later have to cut [general nutrition consensus].</li>
+      </ul>
+      <p>Progression: add weight or reps when the top of a rep range is hit with good form (double progression). Log every lift; the load must trend up over Phase A or growth stalls.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">E</span> Concurrent training — protecting gains from interference <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p>Training endurance and strength together can blunt each (the "interference effect"), strongest when high-volume running and leg lifting collide. Research-supported ways to minimize it, all built into the charts:</p>
+      <ul>
+        <li><b>Separate hard endurance and hard lifting by time.</b> Ideally 6+ hours; at minimum, don't do a hard leg lift and a hard run in the same session. Where the charts stack AM/PM, the hard endurance piece and the lift are split across the day.</li>
+        <li><b>Run before you would ever lift on a shared day is avoided;</b> when both fall together, lifting quality is protected because Phase B lifting is low-volume maintenance, not growth work.</li>
+        <li><b>Phase separation is the main lever:</b> Phase A prioritizes hypertrophy with running kept low; Phase B flips to endurance with lifting cut to one maintenance session that preserves, not builds, muscle. This sequencing sidesteps most interference [general concurrent-training literature].</li>
+        <li><b>Cycling/incline options for the 4×4</b> reduce leg damage on weeks where running volume is already high, preserving lifting output.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">F</span> Periodization and recovery — why deloads and the taper exist <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p><b>Progressive overload with planned recovery:</b> fitness is built when a training stress is followed by adequate recovery (supercompensation). Unbroken hard training without recovery produces stagnation or overtraining. The ~every-4th-week deload (volume cut ~40%, intensity kept) is the scheduled recovery that lets adaptation surface — a standard periodization tool, not lost time.</p>
+      <p><b>Taper:</b> the meta-analytic optimum is a ~2-week taper cutting volume 41–60% while keeping intensity and session frequency unchanged, ideally after an overload block — worth roughly 3% on test day (details and sources in block H). Weeks 39–43 are the overload; Weeks 44–46 are the taper; May 22 is the payout.</p>
+      <p><b>Sleep</b> is the largest recovery and adaptation variable available: it drives growth-hormone release, muscle repair, and motor-skill consolidation (the swim stroke and pacing "lock in" partly during sleep). 8–9 hours is a performance input, not downtime [general sleep-performance literature].</p>
+      <p><b>Monitoring:</b> a resting heart rate elevated 5–8 bpm for several days, or times regressing for 2+ weeks, signals under-recovery — the trigger to add a maintenance-calorie/easy period. This is objective feedback, logged, not guesswork.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">G</span> Phase A: building the base without buying fat or injuries <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p><b>Surplus size — the weight-gain trial.</b> In a randomized study of elite athletes gaining weight (guided ~500 kcal/day surplus + 4 lifting sessions/week vs. eating freely), the guided group gained bodyweight faster (+3.9% vs +1.5%) — but the difference was fat (fat mass +15% vs +3%); short-term LEAN gain was not different between groups [19]. The 12-month follow-up showed what wins: the group that held the modest structured surplus consistently ended +4.4% lean mass versus no change [19]. Coded into the plan: the surplus is capped at +300–500 because calories beyond that demonstrably buy fat, and the lean-mass race is won by holding a modest surplus for months, not by eating bigger.</p>
+      <p><b>The run ramp — novice data.</b> In 874 GPS-tracked novice runners followed for a year, increasing weekly distance by more than 30% raised distance-injury risk versus staying under 10% [20]. A randomized trial that simply halved beginners' starting weekly distance cut running-related injuries by roughly a third and overuse symptoms by nearly half within 4 weeks [20]. This is why Weeks 1–4 start at distances that feel insultingly short: they are the protective dose, not lost time.</p>
+      <p><b>Sleep — an injury variable, measured.</b> Tracking 112 adolescent athletes against 21 months of injury records: those sleeping under 8 hours a night carried 1.7× the injury rate, and sleeping 8+ hours was associated with 68% lower injury odds [21]. In your age group, the nightly 8–9 hours in Daily Habits is one of the largest single injury-risk levers that exists — which is why it is written as a rule.</p>
+      <p><b>Lifting is the armor, not just the engine.</b> Meta-analysis of randomized trials (~26,600 participants): strength training cut sports injuries to less than one-third (RR 0.315) and nearly halved overuse injuries; the effect is dose-dependent. Stretching alone prevented nothing [22] — it stays in the plan for mobility and fin flexibility, not injury statistics. Phase A's three lifting days therefore serve double duty: they build the mass, and they are the documented injury-prevention program for the running load that Phase B will spend. Supervised barbell training at this age is consensus-supported as safe with proper technique.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">H</span> Phase B: cutting weight without losing performance <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p><b>Rate of loss (the controlling variable).</b> In a randomized trial of elite athletes, a slow cut of 0.7% bodyweight per week (~470 kcal/day deficit) produced a 2.1% GAIN in lean mass and ~12% squat-strength improvement during the cut, while 1.4%/week (~845 kcal deficit) produced no lean gain and worse performance outcomes [15]. Rule: never exceed 0.7% of bodyweight per week — at ~175 lb that is ~1.2 lb/week maximum. The plan's −300 to −400 deficit sits inside the validated slow protocol.</p>
+      <p><b>Protein must rise in a deficit.</b> Athletes cutting on 2.3 g/kg/day lost almost no lean mass (−0.3 kg) versus −1.6 kg on 1.0 g/kg with identical fat loss [16]. A 2.4 g/kg intake inside a large deficit preserved muscle AND removed more fat than 1.2 g/kg [16]. Systematic review places the deficit requirement at 1.8–2.7 g/kg, with no additional benefit above ~2.4 [16]. Phase B target: 2.2–2.4 g/kg — practically 175–190 g/day.</p>
+      <p><b>The taper, quantified.</b> Meta-analysis of 27 studies: the optimal pre-test strategy is a ~2-week taper cutting volume 41–60% while leaving intensity and session frequency UNCHANGED [17]. A 2023 meta-analysis adds two Phase-B-relevant findings: a taper preceded by an overload block (exactly what Weeks 39–43 are) produces larger gains, and maintaining session frequency matters most in technique-dependent sports — i.e., swimming — which is why Weeks 44–46 keep short, frequent swims rather than dropping the pool [17].</p>
+      <p><b>Bone protection during the deficit.</b> In a randomized, double-blind trial of 5,201 Navy recruits in basic training, 2,000 mg calcium + 800 IU vitamin D daily cut stress-fracture incidence by 20% in 8 weeks [18]. Phase B stacks the three fracture drivers (mileage peak, deficit, winter/low sun); dietary calcium at the 1,300 mg/day age-18 requirement is the floor, and a daily calcium + vitamin D supplement through Phase B is directly evidence-supported — confirm the dose at the sports physical.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">I</span> Expected adaptations under full execution <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p>Assumptions: every session executed as written, 8–9 h sleep, calories per plan, no skipped deloads, no injury or illness. Under those conditions, the documented response ranges are:</p>
+      <ul>
+        <li><b>Aerobic capacity:</b> the 4×4 protocol at 2 sessions/week produced ~7–10% VO2max gains in 8 weeks in controlled trials; untrained-to-novice runners respond at the high end. Phase B contains ~4 such cycles with deloads. The run gate path (11:00 → ≤8:50 over 46 weeks, ~3 sec/week average) sits well inside these documented adaptation rates.</li>
+        <li><b>500-yd swim:</b> the reference program (1,000–1,500 yd/session, 4–6 days/week, 50-50 method) documented ~10:00 → ~8:00 in roughly one month in prep candidates. This plan allots 45 weeks at that frequency for a smaller total drop (11:00 → 8:00–8:15). The swim gate is the most conservatively set target in the program because the event is technique-dominant and the volume dose matches the documented one several times over.</li>
+        <li><b>Pull-ups:</b> the Armstrong program's documented outcome is 20+ strict reps typically within 6–8 weeks for trainees starting near 8–12. The plan allots 21 weeks of build-up plus 22 weeks of the program itself before the 20+ gate.</li>
+        <li><b>Push-ups / sit-ups:</b> the gate path requires ~1.1 reps/week average. Daily submaximal-volume protocols in military-prep populations routinely produce 1–2 reps/week in the first months, slowing near the 90s — which is why the curve is front-loaded shallow and the final standard is 95–100, not higher.</li>
+        <li><b>Muscle mass (Phase A):</b> at 10–20 hard sets/muscle/week, ~2× weekly frequency, ~1.6 g/kg protein, and a 300–500 kcal surplus, early-stage trainees add lean mass at roughly 0.5–1% of bodyweight per month; gain rates above ~1 lb/week shift the surplus toward fat. The 153 → mid-170s path over 21 weeks sits at the aggressive edge of the lean range — expected composition: majority lean at ≤1 lb/week, progressively fattier above it.</li>
+        <li><b>Strength:</b> squat/deadlift progressing to the 1.25–1.5× bodyweight benchmarks is the standard first-year trajectory for a novice on 3×/week full-body progression.</li>
+        <li><b>Injury risk:</b> the three drivers NSW medical staff cite for the ~1-in-5 BUD/S stress-fracture rate — erratic load ramps, poor recovery, under-fueling — are each controlled by a specific mechanism in this plan (10% rule + deloads; sleep/HR monitoring; calorie floors). Risk is managed, not zero; the bone-loading and Run-Armor work exist to widen that margin.</li>
+      </ul>
+      <p>Biology returns ranges, not points, even at perfect adherence — that is a property of physiology, not of effort. The strongest factual statement available: every gate in this program is set inside, and mostly below, the adaptation rates documented in the cited research and prep-program data.</p>
+    </div>
+  </details>
+
+  <details>
+    <summary><span class="no">J</span> Sources <span class="plus">+</span></summary>
+    <div class="dbody">
+      <p>[1] Stöggl &amp; Sperlich, polarized vs. other TID, Frontiers in Physiology 2015. [2] Systematic review/meta-analysis, polarized vs. threshold TID, J Strength Cond Res 2019. [3] Systematic review, polarized TID on VO2max/economy, Sports (MDPI) 2024. [4] Helgerud et al., "Aerobic High-Intensity Intervals Improve VO2max More Than Moderate Training," Med Sci Sports Exerc 2007. [5] Norwegian 4×4 protocol overviews (NTNU/Myworkout). [6] HR response to 4×4, PMC 2020. [7] HIIT weekly frequency in recreational runners, PMC 2024. [8] Short-interval time-at-VO2max (Billat; Dupont et al. 2002). [9] Stew Smith (CSCS, former SEAL): 50-50 workout, pacing, CSS technique; official NSW Combat Sidestroke guide (sealswcc.com). [10] Schoenfeld, Ogborn, Krieger, weekly volume dose-response, J Sports Sci 2017. [11] Volume/effort reviews (Baz-Valle 2022; dose-response meta-regression 2024). [12] Systematic review, RT volume &amp; hypertrophy, PMC 2022. [13] Schoenfeld, Grgic, Krieger, training frequency meta-analysis 2019. [14] Morton et al., protein intake meta-analysis, Br J Sports Med 2018. [15] Garthe et al., weight-loss rate in elite athletes, IJSNEM 2011. [16] Mettler, Mitchell &amp; Tipton, MSSE 2010; Helms et al., systematic review, IJSNEM 2014; Longland et al. 2016; Murphy et al., EJSS 2015. [17] Bosquet, Montpetit, Arvisais &amp; Mujika, taper meta-analysis, MSSE 2007; PLOS ONE endurance-taper meta-analysis 2023. [18] Lappe et al., calcium + vitamin D RCT in Navy recruits, J Bone Miner Res 2008. [19] Garthe et al., nutritional intervention for weight gain in elite athletes, EJSS 2013, and 12-month follow-up. [20] Nielsen et al., weekly-distance progression and injury in novice runners, JOSPT 2014; start-to-run distance RCT, IJSPT 2018. [21] Milewski et al., sleep and injury in adolescent athletes, J Pediatr Orthop 2014. [22] Lauersen et al., exercise interventions and sports injuries, meta-analysis of RCTs, BJSM 2014 (and 2018 dose-response follow-up). Plus official NSW/BUD/S sources listed in §17.</p>
+    </div>
+  </details>
+
+</section>
+
+
+<!-- ================= PAGE 5: CALIBRATE ================= -->
+<section id="pg-calibrate" class="page">
+
+  <div class="card">
+    <h2>Calibrate</h2>
+    <p class="note">Enter each test here. The plan recalculates itself: run paces, treadmill speeds, swim pace targets, and every remaining test gate. Data saves on this device automatically.</p>
+    <p class="note" id="cal-status">Loading saved data...</p>
+  </div>
+
+  <div class="card" id="week-card">
+    <h2>Where you are</h2>
+    <p id="week-info">Calculating...</p>
+  </div>
+
+  <div class="card">
+    <h2>Test Day Mode</h2>
+    <p class="note">Runs the official protocol for you: times your swim and run, counts down the 2-minute events and every rest period, shows the between-event procedure, then fills your results into the form below. Keep the screen on for the whole test.</p>
+    <div id="tm-live" style="display:none">
+      <p id="tm-phase" style="font-weight:700;font-size:16px;margin:6px 0 2px"></p>
+      <p id="tm-clock" style="font-family:ui-monospace,Menlo,monospace;font-size:46px;font-weight:700;text-align:center;margin:6px 0"></p>
+      <p id="tm-instr" class="note"></p>
+      <div class="frow" id="tm-entryrow" style="display:none"><label id="tm-entrylabel">Reps</label><input id="tm-entry" inputmode="numeric" placeholder="0"></div>
+      <button class="btn" id="tm-btn">GO</button>
+      <button class="btn btn2" id="tm-abort">Abort test</button>
+    </div>
+    <button class="btn" id="tm-start">Start Test Day Mode</button>
+  </div>
+
+  <div class="card">
+    <h2>Enter a test</h2>
+    <div class="frow"><label>Test number</label>
+      <select id="in-test">
+        <option value="1">Test 1 — Jul 11</option><option value="2">Test 2 — Sep 19</option>
+        <option value="3">Test 3 — Oct 24</option><option value="4">Test 4 — Nov 28</option>
+        <option value="5">Test 5 — Jan 2</option><option value="6">Test 6 — Jan 30</option>
+        <option value="7">Test 7 — Mar 6</option><option value="8">Test 8 — Apr 10</option>
+        <option value="9">Test 9 — May 1</option><option value="10">FINAL — May 22</option>
+      </select></div>
+    <div class="frow"><label>500-yd swim (mm:ss)</label><input id="in-swim" inputmode="numeric" placeholder="11:00"></div>
+    <div class="frow"><label>Push-ups (2 min)</label><input id="in-push" inputmode="numeric" placeholder="50"></div>
+    <div class="frow"><label>Sit-ups (2 min)</label><input id="in-sit" inputmode="numeric" placeholder="50"></div>
+    <div class="frow"><label>Pull-ups</label><input id="in-pull" inputmode="numeric" placeholder="10"></div>
+    <div class="frow"><label>1.5-mi run (mm:ss)</label><input id="in-run" inputmode="numeric" placeholder="11:00"></div>
+    <div class="frow"><label>Bodyweight (lb, optional)</label><input id="in-wt" inputmode="numeric" placeholder="153"></div>
+    <button class="btn" id="btn-save">Save test</button>
+    <p class="note" id="save-msg"></p>
+  </div>
+
+  <div class="card" id="paces-card" style="display:none">
+    <h2>Your current training numbers</h2>
+    <div id="paces-out"></div>
+  </div>
+
+  <div class="card" id="targets-card" style="display:none">
+    <h2>Recalculated targets</h2>
+    <p class="note">Straight-line path from your latest scores to the fixed final standard (8:10 swim, 97 push, 97 sit, 20 pull, 8:50 run).</p>
+    <div class="scroll mid" id="targets-out"></div>
+  </div>
+
+  <div class="card" id="hist-card" style="display:none">
+    <h2>Test history</h2>
+    <div class="scroll mid" id="hist-out"></div>
+    <button class="btn btn2" id="btn-reset">Erase all saved data</button>
+  </div>
+
+  <div class="card">
+    <h2>Backup and restore</h2>
+    <p class="note">Storage lives on this device only. After each test, tap Backup and save the code somewhere safe (notes app, message to yourself). If data is ever lost or you switch devices, paste the code and tap Restore.</p>
+    <textarea id="bk-box" rows="3" style="width:100%;border:1px solid var(--line);border-radius:7px;padding:9px;font-size:13px;font-family:ui-monospace,Menlo,monospace" placeholder="Backup code appears here / paste here to restore"></textarea>
+    <div class="toolrow" style="margin-top:10px"><button class="tbtn" id="btn-export">Backup</button><button class="tbtn" id="btn-import">Restore</button></div>
+    <p class="note" id="bk-msg"></p>
+  </div>
+
+</section>
+
+<!-- ================= PAGE 6: GLOSSARY ================= -->
+<section id="pg-glossary" class="page">
+
+  <div class="card">
+    <h2>Glossary — every term, exercise, and method</h2>
+    <p class="note">Type any word from the plan to find it. Everything in the program is defined here in plain language.</p>
+    <input id="gsearch" class="gsearch" placeholder="Search: e.g. deload, face pull, 50-50, MEPS..." inputmode="search">
+  </div>
+
+  <div class="card gcat"><h2>Units and basics</h2>
+    <div class="g"><b>mm:ss</b> — minutes and seconds. 8:30 means 8 minutes 30 seconds.</div>
+    <div class="g"><b>yd / m</b> — yards / meters. Most pools are 25 yards per length. 400m is about one lap of a track, or a quarter mile.</div>
+    <div class="g"><b>mph</b> — miles per hour, the treadmill speed setting.</div>
+    <div class="g"><b>bpm</b> — heart beats per minute.</div>
+    <div class="g"><b>Rep</b> — one complete movement (one push-up, one squat).</div>
+    <div class="g"><b>Set</b> — a group of reps done back-to-back before resting. "3×12" means 3 sets of 12 reps.</div>
+    <div class="g"><b>Max-effort set</b> — as many clean reps as possible in one set.</div>
+    <div class="g"><b>1–3 reps before failure</b> — stop the set while you could still do 1–3 more clean reps. You should never grind to a total stop on compound lifts in this plan.</div>
+    <div class="g"><b>Double progression</b> — work within a rep range (say 6–8). When all sets hit 8 with good form, add a little weight and start again at 6.</div>
+    <div class="g"><b>Pace</b> — time per mile (running) or per 50 yards (swimming). Lower = faster.</div>
+    <div class="g"><b>Splits</b> — your time at each checkpoint. Swim splits = time every 50 yards; they show where you slow down.</div>
+    <div class="g"><b>Baseline</b> — your first measured score. Everything is compared against it.</div>
+    <div class="g"><b>Benchmark</b> — a first-time measurement of an extra event (4-mile run, fin swim, tread) so later targets have a real starting point.</div>
+    <div class="g"><b>Gate / target</b> — the score you should reach by a given test date to stay on the final-standard path.</div>
+    <div class="g"><b>HRmax</b> — your maximum heart rate. Estimate: 208 − (0.7 × age) ≈ 196 at age 18, or the highest number seen during an all-out 4-minute effort.</div>
+    <div class="g"><b>Zone 1 / 2 / 3</b> — easy (&lt;75% HRmax, full sentences), threshold (82–88%, 3–4 words), and VO2max (90–95%, can't talk). The plan lives almost entirely in Zones 1 and 3.</div>
+    <div class="g"><b>VO2max</b> — the maximum rate your body can use oxygen. The ceiling on endurance performance; the 4×4 sessions exist to raise it.</div>
+    <div class="g"><b>Talk test</b> — checking intensity by speech: full sentences = easy; 3–4 words = hard; can't speak = maximal.</div>
+    <div class="g"><b>Deload</b> — a planned easy week (about 60% less work). Fitness is built during recovery; deloads are where gains lock in. Do only what's written.</div>
+    <div class="g"><b>Taper</b> — the final weeks before the last test where volume drops 30–50% so you test fresh. Worth several percent on every event.</div>
+    <div class="g"><b>Maintenance calories</b> — the daily food amount that keeps your weight the same.</div>
+    <div class="g"><b>Surplus / deficit</b> — eating above maintenance (gain weight) / below it (lose weight). Phase A: +300–500. Phase B from Week 24: −300–400.</div>
+    <div class="g"><b>Protein grams</b> — daily protein target (150–180 g). Reference: a chicken breast ≈ 40 g, 4 eggs ≈ 24 g, a cup of Greek yogurt ≈ 20 g.</div>
+    <div class="g"><b>Creatine</b> — a legal, well-studied supplement (3–5 g daily) that slightly improves strength and muscle gain. Optional.</div>
+    <div class="g"><b>Electrolytes</b> — salts (mainly sodium) lost in sweat. Replace with sports drink or salted food around long or hot sessions.</div>
+    <div class="g"><b>Morning heart rate</b> — pulse counted for 60 seconds before getting out of bed. A rise of 5–8 bpm for 3+ days = under-recovered; take an easy day.</div>
+  </div>
+
+  <div class="card gcat"><h2>Running</h2>
+    <div class="g"><b>Easy run</b> — jogging slow enough to speak full sentences the whole time (Zone 1). If in doubt, slower. This builds the engine and the bone; it is most of your running on purpose.</div>
+    <div class="g"><b>Bursts (strides)</b> — after an easy run: 4–6 relaxed sprints of ~20 seconds at fast-but-smooth speed, walking back fully between each. Trains speed and form cheaply.</div>
+    <div class="g"><b>Speed play (fartlek)</b> — during a run: 1 minute faster, 1 minute slow jog, repeated. "8×1" = 8 rounds. A gentle introduction to speed.</div>
+    <div class="g"><b>4×4</b> — the main hard session: 4 minutes at 90–95% HRmax, 3 minutes easy jog, repeated 4 times, after a 10-minute warm-up. Pace the first interval so the last one covers the same distance.</div>
+    <div class="g"><b>Repeats (6×400, 5×800)</b> — run a set distance at goal pace, jog 60–90 sec (400s) or 2:30–3:00 (800s), repeat. Every repeat the same speed — the point is memorizing goal pace.</div>
+    <div class="g"><b>Hill sprints</b> — 45-second hard efforts up a hill, walk down to recover. Strength and speed with less impact.</div>
+    <div class="g"><b>Long run</b> — the longest easy run of the week. Zone 1 the whole way.</div>
+    <div class="g"><b>Boots run</b> — an easy run in military-style boots on grass or sand only, never fast. Conditions feet and ankles for BUD/S. Soak and walk in new boots for a week first.</div>
+    <div class="g"><b>Cadence</b> — steps per minute. Aim ~170–180 short, quiet steps; count for 30 seconds occasionally. Lighter, quicker steps lower bone stress.</div>
+    <div class="g"><b>10% rule</b> — never increase weekly running distance by more than about 10% at once. The main defense against stress fractures.</div>
+    <div class="g"><b>Pogo hops</b> — small, quick, straight-leg bounces in place on grass, landing quietly on the balls of the feet. 2×10 before two runs a week from Week 9; strengthens bone and tendons.</div>
+    <div class="g"><b>1% incline</b> — the treadmill setting that matches outdoor effort (a belt has no air resistance). Always on.</div>
+  </div>
+
+  <div class="card gcat"><h2>Swimming</h2>
+    <div class="g"><b>Combat Sidestroke (CSS)</b> — the Navy's test stroke, swum on your side: pull → breathe → kick → glide. Full teaching steps in Sections tab, 3, plus official videos at sealswcc.com.</div>
+    <div class="g"><b>Freestyle</b> — regular front crawl: face down, arms alternating over the water, flutter kick. Used for the fast half of 50-50s.</div>
+    <div class="g"><b>Breaststroke</b> — frog-style stroke; the only legal test alternative to sidestroke.</div>
+    <div class="g"><b>Glide</b> — the 2–3 second slide after each kick with the body long and still. Free distance; rushing it is the #1 fault.</div>
+    <div class="g"><b>Stroke count</b> — how many strokes one pool length takes. Target: 5–6 per 25 yd including push-off. Count every session; fewer = more efficient.</div>
+    <div class="g"><b>Streamline push-off</b> — off every wall: push off underwater, arms squeezed straight overhead, body arrow-thin, one big double-arm pull, then surface.</div>
+    <div class="g"><b>Scissor kick</b> — the sidestroke kick: top leg forward, bottom leg back, snap together, glide. Narrow, no splash.</div>
+    <div class="g"><b>Turtleback</b> — swimming on your back with an easy kick to catch your breath. The recovery part of fin 75/25s.</div>
+    <div class="g"><b>Tread</b> — staying vertical in deep water with a gentle kick. "Eggbeater" = legs circling alternately, the most efficient tread. Build to 5 minutes with hands out of the water.</div>
+    <div class="g"><b>50-50</b> — 50 yd freestyle fast, immediately 50 yd sidestroke at goal pace, rest 3–4 breaths, repeat. Teaches the stroke to survive being out of breath — the documented 500-time dropper.</div>
+    <div class="g"><b>Goal-pace sets</b> — 100s or 200s swum at exactly the pace your next target time requires (the Calibrate tab computes it), 20–30 sec rest.</div>
+    <div class="g"><b>Nonstop swim</b> — one continuous swim of the listed yards. No wall rests.</div>
+    <div class="g"><b>Swim-PT</b> — 100 yd swim, climb out, 15–20 push-ups + 25 sit-ups on deck, back in. Ten rounds.</div>
+    <div class="g"><b>Fins 75/25</b> — with stiff scuba fins: 75 yd sidestroke + 25 yd turtleback, no stopping, repeated. Kick from the hips, knees nearly straight. Stretch ankles daily once fins start.</div>
+    <div class="g"><b>Rigid fins (rocket/jet type)</b> — stiff rubber scuba fins, the kind BUD/S uses. Not flexible snorkeling flippers.</div>
+    <div class="g"><b>Drag</b> — water resistance. It grows with the square of speed, which is why body position beats muscle in swimming.</div>
+  </div>
+
+  <div class="card gcat"><h2>Gym exercises — how to do each one</h2>
+    <div class="g"><b>Squat</b> — bar on upper back, feet shoulder-width. Sit down between your heels until thighs reach parallel, chest up, then stand. Knees track over toes.</div>
+    <div class="g"><b>Bench press</b> — lying on a bench, lower the bar to mid-chest under control, press to straight arms. Feet planted, shoulder blades pinched back.</div>
+    <div class="g"><b>Incline dumbbell press</b> — bench set to ~30–45°. Press dumbbells from shoulder level to straight arms. Hits upper chest.</div>
+    <div class="g"><b>Dumbbell bench press</b> — flat-bench press with dumbbells instead of a bar; deeper stretch, each side works alone.</div>
+    <div class="g"><b>Overhead press</b> — standing, bar at shoulders, press straight overhead to locked arms without leaning back. Squeeze glutes for a stable base.</div>
+    <div class="g"><b>Dips</b> — on parallel bars, lower until upper arms reach parallel, press back up. Slight forward lean. Add weight only when 12 clean reps are easy.</div>
+    <div class="g"><b>Barbell row</b> — hinge forward ~45° with flat back, pull the bar to your lower ribs, lower under control. No jerking.</div>
+    <div class="g"><b>One-arm dumbbell row</b> — one hand and knee on a bench, back flat, pull the dumbbell to your hip, elbow along the ribs.</div>
+    <div class="g"><b>Pull-up grips</b> — normal: palms away, shoulder-width. Close underhand (chin-up): palms toward you, hands close — more biceps. Wide: palms away, hands wide — more upper back.</div>
+    <div class="g"><b>Weighted pull-up</b> — pull-up with a plate on a dip belt or a dumbbell between the feet. Same strict form: dead hang to chin over.</div>
+    <div class="g"><b>Face pull</b> — cable or band at face height; pull toward your face with elbows high, squeezing shoulder blades. Keeps shoulders healthy under all this pressing.</div>
+    <div class="g"><b>Curls</b> — dumbbells or bar, elbows pinned at your sides, curl to shoulders, lower slowly. No swinging.</div>
+    <div class="g"><b>Triceps work</b> — cable pushdowns (press the bar down until arms straight, elbows pinned) or overhead dumbbell extensions.</div>
+    <div class="g"><b>Lateral raise</b> — dumbbells at your sides, raise to shoulder height with slightly bent elbows, lower slowly. Light weight, strict.</div>
+    <div class="g"><b>Romanian deadlift (RDL)</b> — holding the bar, push hips back with knees only slightly bent, lower the bar along the thighs to mid-shin with a flat back, drive hips forward to stand. Hamstrings and glutes.</div>
+    <div class="g"><b>Deadlift (conventional)</b> — bar on the floor over mid-foot. Flat back, brace, stand up by driving the floor away. Lower under control. Never grind reps in this plan.</div>
+    <div class="g"><b>Trap-bar deadlift</b> — same lift inside a hexagon bar with neutral handles; easier on the back, fine substitute.</div>
+    <div class="g"><b>Walking lunge</b> — step forward, lower until the back knee nearly touches the floor, drive up into the next step. Torso tall.</div>
+    <div class="g"><b>Bulgarian split squat</b> — rear foot elevated on a bench behind you; lower straight down on the front leg, drive up. Brutal and effective on one leg at a time.</div>
+    <div class="g"><b>Calf raise</b> — on a step, rise onto the balls of the feet, pause, lower until heels dip below the step.</div>
+    <div class="g"><b>Slow-lowering calf raise</b> — same, but 1 second up and a strict 5 seconds down. The slow lowering is what builds tendon strength.</div>
+    <div class="g"><b>Bent-knee calf raise</b> — calf raise with knees bent ~30° (seated or leaning). Targets the soleus, the deep calf muscle running lives on.</div>
+    <div class="g"><b>Toe raise (tibialis)</b> — heels on the ground, lift the toes toward the shins, lower slowly. Protects the shins from running load.</div>
+    <div class="g"><b>Neck work</b> — lying down, lift the head against light hand pressure: front, back, each side, ~2×15 gently. At BUD/S, boats are carried on heads.</div>
+    <div class="g"><b>Farmer carry</b> — pick up the heaviest dumbbells you can hold, stand tall, walk ~40 steps. Grip, core, and posture in one move.</div>
+    <div class="g"><b>Dead hang / towel hang</b> — hang from the bar (or from a towel draped over it) with straight arms as long as possible. Grip endurance for the obstacle course.</div>
+    <div class="g"><b>Rope climb (wrap method)</b> — trap the rope between the feet (one foot pins it on top of the other), stand up with the legs, slide the hands up, re-pin. Legs climb; arms steer.</div>
+    <div class="g"><b>Pistol squat progression</b> — a one-leg squat. Start by squatting down to a chair on one leg and standing back up; lower the seat over time. Gym-free leg strength.</div>
+    <div class="g"><b>Step-up</b> — step onto a knee-high box or bench with one leg, drive up until standing on it, step down under control. Holding dumbbells makes it a full leg exercise.</div>
+    <div class="g"><b>Towel row</b> — loop a towel around a pole or door handle, lean back holding both ends, pull your chest to your hands. A rowing exercise with zero equipment.</div>
+    <div class="g"><b>Lift D</b> — the optional 4th lifting day (35 min, upper-body accessories: incline press, rows, laterals, curls, triceps, face pulls). Earned, not default — conditions are in the Adjust tab under "I want to add more training."</div>
+    <div class="g"><b>Plank</b> — forearms and toes, body a straight line, squeeze everything, breathe. No sagging hips.</div>
+    <div class="g"><b>Flutter kicks</b> — lying on your back, hands under hips, legs straight and 6 inches up, kick in small alternating pulses.</div>
+    <div class="g"><b>Side-lying leg lift</b> — lying on your side, lift the top leg to ~45° and lower slowly. Hip stabilizers for running.</div>
+    <div class="g"><b>Single-leg balance</b> — stand on one foot, eyes closed, 30 seconds. Ankle control that prevents sprains on sand and trails.</div>
+  </div>
+
+  <div class="card gcat"><h2>Program methods</h2>
+    <div class="g"><b>Morning routine</b> — 3 max-effort push-up sets within ~10 minutes of waking, then the day's pull-up work. Phase A: Mon/Wed/Fri from Week 5. Phase B: every weekday from Week 26.</div>
+    <div class="g"><b>Small-sets method (grease the groove)</b> — many easy sets of about half your max, spread through the day, never near failure. How pull-ups are built before you can do 8.</div>
+    <div class="g"><b>Armstrong routine</b> — the 5-day/week pull-up program (Sections tab, 5): Mon max sets, Tue pyramid, Wed three grips, Thu max training sets, Fri repeat the hardest day. The standard military route to 20+.</div>
+    <div class="g"><b>Pyramid</b> — count 1-2-3-4-5-4-3-2-1; each number = that many pull-ups, double it in push-ups, triple it in sit-ups. Minimal rest.</div>
+    <div class="g"><b>Grinder</b> — 100 pull-ups, 200 push-ups, 300 sit-ups, each in as few sets as possible, running 400m between every set. Week 37 half size, Week 41 full.</div>
+    <div class="g"><b>Run-Armor</b> — the twice-weekly 10-minute injury-prevention circuit (Sections tab, 12): slow calves, bent-knee calves, toe raises, single-leg balance, side leg lifts.</div>
+    <div class="g"><b>Box breathing</b> — in 4 seconds, hold 4, out 4, hold 4. Five minutes nightly and between test events. Trains calm under stress.</div>
+    <div class="g"><b>Fast reset</b> — two quick sniffs in through the nose, one long slow breath out. Drops heart rate and nerves between hard efforts.</div>
+    <div class="g"><b>The five knots</b> — bowline, square knot, becket's bend, clove hitch, right angle. Learned dry with a short rope, two 5-minute blocks a week in Phase B. Tested underwater at BUD/S itself — never self-practice the underwater part.</div>
+    <div class="g"><b>Test protocol</b> — the exact PST sequence with fixed rests (Sections tab, 15): swim, 10 min, push-ups, 2 min, sit-ups, 2 min, pull-ups, 10 min, run.</div>
+  </div>
+
+  <div class="card gcat"><h2>Military and paperwork terms</h2>
+    <div class="g"><b>PST</b> — Physical Screening Test: 500-yd swim, push-ups, sit-ups, pull-ups, 1.5-mile run. The score sheet that gets you a SEAL contract.</div>
+    <div class="g"><b>BUD/S</b> — Basic Underwater Demolition/SEAL training in Coronado: the ~6-month selection course (orientation, then three 7-week phases).</div>
+    <div class="g"><b>Hell Week</b> — the famous ~5.5-day event in First Phase: constant training on ~4 total hours of sleep.</div>
+    <div class="g"><b>NSW</b> — Naval Special Warfare, the SEAL community's command. Publishes the official guides at sealswcc.com.</div>
+    <div class="g"><b>SEAL Challenge / SO contract</b> — the enlistment contract that guarantees a shot at BUD/S. SO = Special Warfare Operator, the SEAL job rating.</div>
+    <div class="g"><b>DEP</b> — Delayed Entry Program: signed but not yet shipped. You take official monthly PSTs during this window; paperwork can start at 17 with a parent's signature.</div>
+    <div class="g"><b>MEPS</b> — Military Entrance Processing Station: the physical exam, vision test, and ASVAB site.</div>
+    <div class="g"><b>ASVAB</b> — the military entrance exam. SEAL contract needs GS+MC+EI ≥ 170 or VE+MK+MC+CS ≥ 220 (those letters are its sub-test scores; ask the recruiter for the Coding Speed test).</div>
+    <div class="g"><b>C-SORT</b> — a one-time computer test of mental resilience taken at recruiting. Cannot be retaken. It measures the exact skills in Sections tab, 14.</div>
+    <div class="g"><b>NSW coordinator / mentor</b> — the official who administers scored PSTs and guides candidates through DEP. Ask the recruiter to connect you.</div>
+    <div class="g"><b>NSW Prep</b> — the 8-week course after boot camp with its own exit test: 1,000m fin swim ≤20:00, 4-mile run ≤31:00, 70 push-ups, 60 sit-ups, 10 pull-ups.</div>
+  </div>
+
+</section>
+
+
+<!-- ================= PAGE 7: ADJUST ================= -->
+<section id="pg-adjust" class="page">
+  <div class="card">
+    <h2>Adjust — the decision engine</h2>
+    <p class="note">This tab replaces the coach. When something goes wrong or off-plan, pick the situation and answer what it asks. The output is the plan's own rules applied to your input — the same decision every time, no outside help needed.</p>
+    <div class="frow"><label>Situation</label>
+      <select id="adj-sit">
+        <option value="">Choose...</option>
+        <option value="missed">I missed training days</option>
+        <option value="sick">I'm sick</option>
+        <option value="pain">Something hurts</option>
+        <option value="target">I missed a test target</option>
+        <option value="plateau">Scores are stuck (2 tests, no progress)</option>
+        <option value="signals">Cutting: warning signs (Phase B)</option>
+        <option value="weight">Weight trend check</option>
+        <option value="facility">No pool / no gym / bad weather</option>
+        <option value="addmore">I want to add more training</option>
+        <option value="swimfault">Swim not improving (fault finder)</option>
+      </select></div>
+    <div id="adj-inputs"></div>
+    <button class="btn" id="adj-go" style="display:none">Get the decision</button>
+  </div>
+  <div class="card" id="adj-outcard" style="display:none">
+    <h2>Decision</h2>
+    <div id="adj-out" style="font-size:15px;line-height:1.6"></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  Weekly charts, targets, and instructions are one document in three pages. Content unchanged from v4.
+</footer>
+
+<script>
+var tabs = document.querySelectorAll('.tab');
+var pages = document.querySelectorAll('.page');
+tabs.forEach(function(t){
+  t.addEventListener('click', function(){
+    tabs.forEach(function(x){ x.classList.remove('active'); });
+    pages.forEach(function(p){ p.classList.remove('active'); });
+    t.classList.add('active');
+    document.getElementById(t.dataset.page).classList.add('active');
+    window.scrollTo(0,0);
+  });
+});
+var subtabs = document.querySelectorAll('.subtab');
+var subpages = document.querySelectorAll('.subpage');
+subtabs.forEach(function(t){
+  t.addEventListener('click', function(){
+    subtabs.forEach(function(x){ x.classList.remove('active'); });
+    subpages.forEach(function(p){ p.classList.remove('active'); });
+    t.classList.add('active');
+    document.getElementById(t.dataset.sub).classList.add('active');
+    window.scrollTo(0,0);
+  });
+});
+</script>
+
+
+<script>
+(function(){
+var TESTS=[
+ {n:1,label:"Test 1",date:new Date(2026,6,11)},{n:2,label:"Test 2",date:new Date(2026,8,19)},
+ {n:3,label:"Test 3",date:new Date(2026,9,24)},{n:4,label:"Test 4",date:new Date(2026,10,28)},
+ {n:5,label:"Test 5",date:new Date(2027,0,2)},{n:6,label:"Test 6",date:new Date(2027,0,30)},
+ {n:7,label:"Test 7",date:new Date(2027,2,6)},{n:8,label:"Test 8",date:new Date(2027,3,10)},
+ {n:9,label:"Test 9",date:new Date(2027,4,1)},{n:10,label:"FINAL",date:new Date(2027,4,22)}];
+var FINAL={swim:490,run:530,push:97,sit:97,pull:20};
+var DELOADS=[4,8,12,16,20,25,29,33,38,42];
+var TESTWEEKS={1:"Test 1",11:"Test 2",16:"Test 3",21:"Test 4",26:"Test 5",30:"Test 6",35:"Test 7",40:"Test 8",43:"Test 9",46:"FINAL TEST"};
+var data=[]; var storageOK=true;
+
+function parseTime(v){
+ if(!v)return null; v=String(v).trim().replace(",",":").replace(".",":");
+ if(v.indexOf(":")>-1){var p=v.split(":");var m=parseInt(p[0],10),sec=parseInt(p[1],10);
+  if(isNaN(m)||isNaN(sec)||sec>=60)return null; return m*60+sec;}
+ var n=parseFloat(v); if(isNaN(n))return null; return n>=100?Math.round(n):Math.round(n*60);}
+function fmtT(sec){sec=Math.round(sec);var m=Math.floor(sec/60),x=sec%60;return m+":"+(x<10?"0":"")+x;}
+function round5(sec){return Math.round(sec/5)*5;}
+
+function latest(){if(!data.length)return null;var d=data.slice().sort(function(a,b){return a.t-b.t});return d[d.length-1];}
+
+function paces(runSec,swimSec){
+ var pace=runSec/1.5, eLo=pace+120, eHi=pace+150, iPace=Math.max(pace-26,300), rep=iPace*0.25;
+ var h="";
+ h+='<p class="pv"><b>Easy run pace</b>'+fmtT(eLo)+"–"+fmtT(eHi)+" per mile ("+(3600/eHi).toFixed(1)+"–"+(3600/eLo).toFixed(1)+" mph, treadmill +1%)</p>";
+ h+='<p class="pv"><b>400m repeats</b>'+fmtT(rep)+" per repeat ("+(3600/iPace).toFixed(1)+" mph)</p>";
+ h+='<p class="pv"><b>800m repeats</b>'+fmtT(rep*2)+" per repeat</p>";
+ h+='<p class="pv"><b>4×4 sessions</b>by heart rate: 90–95% of max, pace lands near '+fmtT(iPace+15)+"–"+fmtT(iPace+35)+"/mi</p>";
+ if(swimSec){var p50=swimSec/10;
+  h+='<p class="pv"><b>Current swim pace</b>'+fmtT(p50)+" per 50 yd</p>";
+  var nxt=nextTarget("swim"); if(nxt){h+='<p class="pv"><b>Goal-pace swim sets</b>'+fmtT(nxt/10)+" per 50 · "+fmtT(nxt/5)+" per 100 (next-gate pace)</p>";}}
+ return h;}
+
+function nextTarget(ev){var L=latest();if(!L)return null;var i=L.t;if(i>=10)return null;
+ var cur=(ev==="swim")?L.swim:(ev==="run")?L.run:L[ev];if(cur==null)return null;
+ var fin=FINAL[ev],n=10-i,step=(fin-cur)/n,v=cur+step;
+ if(ev==="swim"||ev==="run"){if(cur<=fin)return fin;return round5(v);} 
+ if(cur>=fin)return fin;return Math.ceil(v);}
+
+function targetsTable(){var L=latest();if(!L)return "";var i=L.t;
+ var h='<table><tr><th>Test</th><th>Date</th><th>Swim</th><th>Push</th><th>Sit</th><th>Pull</th><th>Run</th></tr>';
+ for(var j=i+1;j<=10;j++){var k=j-i,n=10-i,row=TESTS[j-1];
+  function tv(ev){var cur=L[ev],fin=FINAL[ev];if(cur==null)return "—";
+   if(ev==="swim"||ev==="run"){if(cur<=fin)return fmtT(fin)+(j<10?" (hold)":"");return fmtT(round5(cur+(fin-cur)*k/n));}
+   if(cur>=fin)return fin+(j<10?" (hold)":"");return Math.ceil(cur+(fin-cur)*k/n);}
+  h+="<tr"+(j===10?' class="test"':"")+"><td>"+row.label+"</td><td>"+row.date.toLocaleDateString(undefined,{month:"short",day:"numeric"})+"</td><td>"+tv("swim")+"</td><td>"+tv("push")+"</td><td>"+tv("sit")+"</td><td>"+tv("pull")+"</td><td>"+tv("run")+"</td></tr>";}
+ h+="</table>";return h;}
+
+function histTable(){var d=data.slice().sort(function(a,b){return a.t-b.t});
+ var h='<table><tr><th>Test</th><th>Swim</th><th>Push</th><th>Sit</th><th>Pull</th><th>Run</th><th>Wt</th></tr>';
+ d.forEach(function(r){h+="<tr><td>"+TESTS[r.t-1].label+"</td><td>"+(r.swim?fmtT(r.swim):"—")+"</td><td>"+(r.push!=null?r.push:"—")+"</td><td>"+(r.sit!=null?r.sit:"—")+"</td><td>"+(r.pull!=null?r.pull:"—")+"</td><td>"+(r.run?fmtT(r.run):"—")+"</td><td>"+(r.wt!=null?r.wt:"—")+"</td></tr>";});
+ return h+"</table>";}
+
+function weekInfo(){var start=new Date(2026,6,6),now=new Date();
+ var wk=Math.floor((now-start)/(7*864e5))+1,el=document.getElementById("week-info");
+ if(wk<1){el.textContent="Program starts Monday, July 6, 2026. Test 1 is Saturday, July 11.";return;}
+ if(wk>47){el.textContent="Week 47 complete. Program finished May 27, 2027. Hold Week-44-level training until ship date.";return;}
+ var phase=wk<=21?"Phase A (build + gain)":"Phase B (cut + speed)";
+ var extra=DELOADS.indexOf(wk)>-1?" This is a DELOAD week — do only what is written.":"";
+ if(TESTWEEKS[wk])extra+=" "+TESTWEEKS[wk]+" is this Saturday.";
+ el.innerHTML="<b>Week "+wk+" of 47</b> — "+phase+". Open the Charts tab, "+(wk<=21?"Phase A":"Phase B")+", Week "+wk+" row."+extra;}
+
+function render(){
+ var L=latest();
+ if(L&&L.run){document.getElementById("paces-card").style.display="block";
+  document.getElementById("paces-out").innerHTML=paces(L.run,L.swim);}
+ if(L&&L.t<10){document.getElementById("targets-card").style.display="block";
+  document.getElementById("targets-out").innerHTML=targetsTable();}
+ if(data.length){document.getElementById("hist-card").style.display="block";
+  document.getElementById("hist-out").innerHTML=histTable();}}
+
+async function load(){
+ try{var r=await window.storage.get("pst_tests");if(r&&r.value)data=JSON.parse(r.value);
+  document.getElementById("cal-status").textContent=data.length?"Saved data loaded ("+data.length+" test"+(data.length>1?"s":"")+").":"No tests saved yet. Enter Test 1 after Saturday.";}
+ catch(e){document.getElementById("cal-status").textContent="No tests saved yet. Enter Test 1 after Saturday.";}
+ render();}
+
+async function save(){
+ var t=parseInt(document.getElementById("in-test").value,10);
+ var rec={t:t,swim:parseTime(document.getElementById("in-swim").value),
+  push:parseInt(document.getElementById("in-push").value,10),sit:parseInt(document.getElementById("in-sit").value,10),
+  pull:parseInt(document.getElementById("in-pull").value,10),run:parseTime(document.getElementById("in-run").value),
+  wt:parseFloat(document.getElementById("in-wt").value)};
+ if(isNaN(rec.push))rec.push=null; if(isNaN(rec.sit))rec.sit=null; if(isNaN(rec.pull))rec.pull=null; if(isNaN(rec.wt))rec.wt=null;
+ var msg=document.getElementById("save-msg");
+ if(!rec.swim&&!rec.run&&rec.push==null&&rec.sit==null&&rec.pull==null){msg.textContent="Enter at least one result.";return;}
+ data=data.filter(function(r){return r.t!==t});data.push(rec);
+ try{await window.storage.set("pst_tests",JSON.stringify(data));msg.textContent="Saved. Plan recalculated below.";}
+ catch(e){msg.textContent="Saved for this session (device storage unavailable).";}
+ render();}
+
+async function reset(){if(!confirm("Erase all saved test data?"))return;
+ data=[];try{await window.storage.delete("pst_tests");}catch(e){}
+ document.getElementById("paces-card").style.display="none";
+ document.getElementById("targets-card").style.display="none";
+ document.getElementById("hist-card").style.display="none";
+ document.getElementById("cal-status").textContent="Data erased.";}
+
+function doExport(){var box=document.getElementById("bk-box"),m=document.getElementById("bk-msg");
+ if(!data.length){m.textContent="Nothing to back up yet.";return;}
+ box.value=JSON.stringify(data);box.focus();box.select();
+ m.textContent="Backup code ready — copy it and save it somewhere safe.";}
+async function doImport(){var box=document.getElementById("bk-box"),m=document.getElementById("bk-msg");
+ try{var arr=JSON.parse(box.value.trim());
+  if(!Array.isArray(arr)||!arr.length||arr.some(function(r){return typeof r.t!=="number"||r.t<1||r.t>10;}))throw new Error("bad");
+  data=arr;try{await window.storage.set("pst_tests",JSON.stringify(data));}catch(e){}
+  m.textContent="Restored "+data.length+" test(s).";document.getElementById("cal-status").textContent="Saved data loaded ("+data.length+" test"+(data.length>1?"s":"")+").";render();}
+ catch(e){m.textContent="That code is not valid. Paste the exact backup text.";}}
+document.getElementById("btn-export").addEventListener("click",doExport);
+document.getElementById("btn-import").addEventListener("click",doImport);
+document.getElementById("btn-save").addEventListener("click",save);
+document.getElementById("btn-reset").addEventListener("click",reset);
+weekInfo();load();
+})();
+</script>
+<button id="totop" aria-label="Back to top">&#8593;</button>
+
+<script>
+(function(){
+// Jump chips + expand/collapse for Sections and Science pages
+["pg-sections","pg-science"].forEach(function(pid){
+ var page=document.getElementById(pid); if(!page)return;
+ var firstCard=page.querySelector(".card"); var dets=page.querySelectorAll("details");
+ var bar=document.createElement("div");
+ bar.innerHTML='<select class="jump"><option value="">Jump to a section...</option></select><div class="toolrow"><button class="tbtn" data-a="open">Expand all</button><button class="tbtn" data-a="close">Collapse all</button></div>';
+ firstCard.parentNode.insertBefore(bar,firstCard.nextSibling);
+ var sel=bar.querySelector(".jump");
+ dets.forEach(function(d,idx){
+  var sum=d.querySelector("summary"); var no=sum.querySelector(".no");
+  var label=(no?no.textContent+" ":"")+sum.textContent.replace(no?no.textContent:"","").replace("+","").trim();
+  var o=document.createElement("option"); o.value=String(idx); o.textContent=label; sel.appendChild(o);});
+ sel.addEventListener("change",function(){var v=sel.value; if(v==="")return;
+  var d=dets[parseInt(v,10)]; d.open=true; d.scrollIntoView({behavior:"smooth",block:"start"}); sel.value="";});
+ bar.querySelectorAll(".tbtn").forEach(function(b){b.addEventListener("click",function(){
+  var open=b.getAttribute("data-a")==="open"; dets.forEach(function(d){d.open=open;});});});
+});
+// Glossary live search
+var gs=document.getElementById("gsearch");
+if(gs){gs.addEventListener("input",function(){
+ var q=gs.value.trim().toLowerCase();
+ document.querySelectorAll("#pg-glossary .g").forEach(function(e){
+  e.style.display=(!q||e.textContent.toLowerCase().indexOf(q)>-1)?"":"none";});
+ document.querySelectorAll("#pg-glossary .gcat").forEach(function(cat){
+  var any=false; cat.querySelectorAll(".g").forEach(function(e){if(e.style.display!=="none")any=true;});
+  cat.style.display=any?"":"none";});});}
+// Back to top
+var tt=document.getElementById("totop");
+var hd=document.querySelector(".hdr");
+window.addEventListener("scroll",function(){tt.style.display=window.scrollY>600?"block":"none";if(hd)hd.classList.toggle("scrolled",window.scrollY>8);});
+tt.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"});});
+})();
+</script>
+
+<script>
+(function(){
+var sit=document.getElementById("adj-sit"),box=document.getElementById("adj-inputs"),
+    go=document.getElementById("adj-go"),outc=document.getElementById("adj-outcard"),out=document.getElementById("adj-out");
+function sel(id,label,opts){var h='<div class="frow"><label>'+label+'</label><select id="'+id+'">';
+ opts.forEach(function(o){h+='<option value="'+o[0]+'">'+o[1]+'</option>';});return h+'</select></div>';}
+function num(id,label,ph){return '<div class="frow"><label>'+label+'</label><input id="'+id+'" inputmode="decimal" placeholder="'+ph+'"></div>';}
+function chk(id,label){return '<div class="frow"><label>'+label+'</label><input type="checkbox" id="'+id+'" style="flex:0 0 24px;height:24px"></div>';}
+var forms={
+ missed: num("m-days","How many days missed?","3")+sel("m-why","Reason",[["life","Schedule / life"],["ill","Illness"]]),
+ sick: sel("s-type","Symptoms",[["neck","Above the neck only (runny nose, mild sore throat)"],["body","Fever, chest congestion, or body aches"]]),
+ pain: sel("p-loc","Where",[["bone","Shin, top of foot, or hip (bone)"],["bar","Elbow or shoulder (from bar work)"],["joint","Knee or ankle joint"],["muscle","General muscle soreness"]])+num("p-days","Days it has persisted","2"),
+ target: sel("t-ev","Which event missed its target",[["swim","500-yd swim"],["run","1.5-mile run"],["push","Push-ups"],["sit","Sit-ups"],["pull","Pull-ups"]]),
+ plateau: "",
+ signals: chk("g1","Times regressing 2+ weeks")+chk("g2","Morning heart rate up 5-8 bpm, 3+ days")+chk("g3","Cold all the time")+chk("g4","Broken sleep")+chk("g5","Small injuries stacking up")+chk("g6","Dreading every session"),
+ weight: sel("w-ph","Phase",[["A","Phase A (gaining, Wks 1-21)"],["B","Phase B cut (Wk 24 on)"]])+num("w-last","Last week average (lb)","175.0")+num("w-this","This week average (lb)","174.2"),
+ facility: sel("f-what","What is unavailable",[["pool","Pool"],["gym","Gym / weights"],["weather","Outdoor running (weather)"]]),
+ addmore: "",
+ swimfault: sel("sf","Main symptom",[["sink","Legs sink / body drags"],["strokes","Stroke count high, lots of effort for little speed"],["breath","Out of breath fast"],["zigzag","Zigzagging down the lane"],["fade","Splits fade after 200-300 yd"],["shoulder","Shoulder pain when swimming"]])
+};
+sit.addEventListener("change",function(){box.innerHTML=forms[sit.value]||"";go.style.display=sit.value?"block":"none";outc.style.display="none";});
+function V(id){var e=document.getElementById(id);return e?e.value:"";}
+function C(id){var e=document.getElementById(id);return e&&e.checked?1:0;}
+function decide(){
+ var t=sit.value,r="";
+ if(t==="missed"){var d=parseFloat(V("m-days"))||0,ill=V("m-why")==="ill";
+  if(ill)r+="<p><b>Illness rule first:</b> nothing resumes until 24 hours fever-free, then two easy days before any of the below.</p>";
+  if(d<=2)r+="<p><b>Decision: skip the missed days.</b> Do not double up or make anything up. Resume the chart at today's row.</p>";
+  else if(d<=6)r+="<p><b>Decision: resume at the current week.</b> First two days back at easy effort, then the chart as written.</p>";
+  else if(d<=13)r+="<p><b>Decision: repeat the previous training week once,</b> then continue. If a test was in the gap, run it at the end of the repeated week.</p>";
+  else r+="<p><b>Decision: re-enter two weeks back.</b> First week back, do the easy versions of everything. Retest before advancing past any missed test.</p>";
+  r+="<p>Never stack two hard run days back-to-back to compensate.</p>";}
+ if(t==="sick"){r=V("s-type")==="neck"?
+  "<p><b>Decision: train, reduced.</b> Do the easy version or half of today's session. No intervals, no tests, no Grinder.</p>":
+  "<p><b>Decision: full rest.</b> Nothing until 24 hours fever-free, then two easy days, then rejoin the chart at the current week (use the missed-days rule for the gap).</p>";}
+ if(t==="pain"){var loc=V("p-loc"),pd=parseFloat(V("p-days"))||0;
+  if(loc==="bone"){r="<p><b>Decision: stop running today.</b> Swimming and cycling only until the spot is pain-free for 7 straight days, then rebuild the run ladder from two weeks below where you stopped.</p>";
+   if(pd>=10)r+="<p><b>10+ days: get it imaged.</b> See a doctor; do not run on it. A confirmed stress reaction caught now costs weeks; ignored, it costs the plan.</p>";}
+  else if(loc==="bar"){r="<p><b>Decision: drop one pull/push day this week</b> and cut set sizes ~30%. Tendons adapt slower than muscles.</p>";
+   if(pd>=10)r+="<p>10+ days without improvement: clinician.</p>";}
+  else if(loc==="joint"){r="<p><b>Decision: 3-4 days off impact</b> (pool and bike keep everything else), then resume with easy runs only for 2 days. Limping, swelling, or a changed stride = treat as the bone rule.</p>";
+   if(pd>=10)r+="<p>10+ days: clinician.</p>";}
+  else r="<p><b>Decision: normal soreness, proceed as written.</b> Soreness that changes how you move gets the joint rule instead.</p>";}
+ if(t==="target"){var ev=V("t-ev");
+  r="<p><b>Universal rule:</b> repeat the previous block's Saturday emphasis for 2 weeks, then retest. Change nothing else.</p>";
+  if(ev==="swim")r+="<p><b>Swim add-on:</b> make the 5th weekly swim non-optional for the next block, run the fault finder (this tab), and verify your goal-pace sets match the Calibrate tab's current per-50 number.</p>";
+  if(ev==="run")r+="<p><b>Run add-on:</b> audit the easy days first — if easy runs were above Zone 1, that is the cause. Confirm both weekly quality sessions happened. Do NOT add a third hard day.</p>";
+  if(ev==="push"||ev==="sit")r+="<p><b>PT add-on:</b> morning routine goes from 3 to 4 max-effort sets for 2 weeks, and check test pacing (30-second blocks, Sections tab 4).</p>";
+  if(ev==="pull")r+="<p><b>Pull-up add-on:</b> check the Armstrong Day-4 set count — it must rise week to week. Below 8 max reps: stay on the small-sets method, not Armstrong.</p>";}
+ if(t==="plateau"){r="<p><b>Decision: run this checklist in order and change ONE thing, then retest in 2 weeks.</b></p><p>1. Sleep averaging under 8 hours? Fix that first — nothing else matters until it is fixed.<br>2. Phase B: weight dropping faster than 0.7%/week? Eat at maintenance for 1 week.<br>3. Easy days too fast? Check watch history against Zone 1 — this is the most common cause.<br>4. Only after 1-3 are clean: add the sanctioned extras (5th swim, or Lift D per the add-more rules).</p>";}
+ if(t==="signals"){var n=C("g1")+C("g2")+C("g3")+C("g4")+C("g5")+C("g6");
+  r=n>=2?"<p><b>Decision ("+n+" signals): eat at maintenance for 1-2 weeks, training unchanged.</b> Resume the deficit only when signals clear. This is the plan working, not the plan failing.</p>"
+        :"<p><b>Decision ("+n+" signal"+(n===1?"":"s")+"): continue as written.</b> Recheck weekly; two or more triggers the maintenance rule.</p>";}
+ if(t==="weight"){var ph=V("w-ph"),a=parseFloat(V("w-last")),b=parseFloat(V("w-this"));
+  if(isNaN(a)||isNaN(b)){r="<p>Enter both weekly averages.</p>";}
+  else{var d=Math.round((b-a)*10)/10;
+   if(ph==="A"){r="<p>Change: <b>"+(d>0?"+":"")+d+" lb</b> this week. Target: +0.4 to +1.0.</p>";
+    if(d<0.2)r+="<p><b>Decision: add ~200 kcal/day.</b> Recheck next week.</p>";
+    else if(d>1.2)r+="<p><b>Decision: subtract ~150 kcal/day</b> — above ~1 lb/week the surplus is buying fat, not muscle.</p>";
+    else r+="<p><b>Decision: hold. On track.</b></p>";}
+   else{var loss=Math.round((a-b)*10)/10,cap=Math.round(a*0.007*10)/10;
+    r="<p>Loss: <b>"+loss+" lb</b> this week. Cap: "+cap+" lb (0.7% of bodyweight). Target: 0.5-"+cap+".</p>";
+    if(loss>cap)r+="<p><b>Decision: add 150-200 kcal/day.</b> Losing faster than the cap trades muscle and bone for speed you will not keep.</p>";
+    else if(loss<0.3)r+="<p><b>Decision: subtract 100-150 kcal/day</b> after confirming a full honest week of logging. Deload/maintenance weeks are exempt.</p>";
+    else r+="<p><b>Decision: hold. On track.</b></p>";}}}
+ if(t==="facility"){var w=V("f-what");
+  if(w==="pool")r="<p><b>Decision: move swim days within the week</b> — the minimum stands at 3 swims of 1,000+ yd. Closed for multiple days: protect the remaining swims first; a swim outranks a lift in the priority order (tests, hard runs, swims, lifts, everything else). Dryland does not replace water time — do not pretend it does.</p>";
+  if(w==="gym")r="<p><b>Decision: bodyweight substitute, one day only:</b> pistol-squat progressions or step-ups 3×10/leg, push-up variations 4 sets, towel rows or strict pull-ups 4 sets, single-leg calf raises 3×15, toe raises, carries with anything heavy. Multi-day: keep the morning PT and all runs/swims; strength survives a missed week.</p>";
+  if(w==="weather")r="<p><b>Decision: treadmill, 1% incline,</b> speeds from the Calibrate tab. Intervals allowed indoors through Week 33; tests and benchmarks wait for a safe outdoor day within the same week.</p>";}
+ if(t==="addmore"){r="<p><b>Only two additions exist. Everything else is a no.</b></p><p><b>1. The 5th swim</b> (800-1,000 yd easy technique) — allowed any week sleep, morning HR, and joints are normal.</p><p><b>2. Lift D</b> — a 35-minute upper-body accessory session (incline press, rows, laterals, curls, triceps, face pulls), Tuesday evening, ONLY after 2+ straight weeks where every lift progressed, sleep averaged 8+, morning HR normal, nothing aches. Drops automatically on deload and test weeks.</p><p>Extra running is never the answer — the ramp is capped by bone, not fitness.</p>";}
+ if(t==="swimfault"){var sf=V("sf"),m={
+  sink:"<p><b>Fault: head high / chest up.</b> Fix: eyes to the pool floor, press the chest down slightly, ear glued to the bottom-arm shoulder. Drill: kickboard side-kick, 6×25, focusing only on flat hips.</p>",
+  strokes:"<p><b>Fault: rushed or missing glide.</b> Fix: hold the glide a full 2-3 count after each kick. Drill: 10×25 counting strokes, trying to remove one stroke per length at the same speed.</p>",
+  breath:"<p><b>Fault: holding air underwater.</b> Fix: exhale continuously the entire time the face is in the water — surface time is inhale only. Drill: 8×50 easy, humming out through the nose underwater.</p>",
+  zigzag:"<p><b>Fault: wide scissor kick / crooked pull.</b> Fix: kick recovers narrow, inside the body's shadow; bottom-arm pull finishes at the hip, not across the body. Drill: single-arm CSS 6×25.</p>",
+  fade:"<p><b>Fault: conditioning at the failure distance, or opening too fast.</b> Fix: check splits — if the first 100 was faster than goal pace, it is pacing; if even, train the fade point with 5-6 repeats of that distance, plus the 50-50s. This one is fitness, not form.</p>",
+  shoulder:"<p><b>Fault: pulling with a straight arm or over-reaching.</b> Fix: slight elbow bend at the catch, pull finishes at the hip. Persisting 10+ days: clinician, and swim technique-only volume meanwhile.</p>"};
+  r=m[sf]||"";
+  r+="<p>Every fault above: film one length (monthly video check, Sections tab 3) to confirm the fix took.</p>";}
+ out.innerHTML=r;outc.style.display="block";}
+go.addEventListener("click",decide);
+})();
+</script>
+
+<script>
+(function(){
+var PH=[
+ {t:"sw",label:"500-yd swim",instr:"Sidestroke or breaststroke. Even 50s at goal pace. Tap DONE the moment you touch.",btn:"GO — start swim"},
+ {t:"rest",secs:600,label:"Rest — 10:00",instr:"Out of the pool. Towel off, breathe, sip water. Timer advances by itself."},
+ {t:"cd",secs:120,label:"Push-ups — 2:00",entry:"push",elabel:"Push-ups done",instr:"Hands level with chest, just outside shoulders. Gravity down, exert up.",btn:"GO — start push-ups"},
+ {t:"rest",secs:120,label:"Rest — 2:00",instr:"Shake the arms out. Breathe."},
+ {t:"cd",secs:120,label:"Sit-ups — 2:00",entry:"sit",elabel:"Sit-ups done",instr:"Four 30-second blocks, steady rhythm. Hips back 2-3 inches if failing late.",btn:"GO — start sit-ups"},
+ {t:"rest",secs:120,label:"Rest — 2:00",instr:"Breathe. Next: pull-ups, no time limit."},
+ {t:"man",label:"Pull-ups — no time limit",entry:"pull",elabel:"Pull-ups done",instr:"Dead hang to chin over, steady pace, short pauses allowed. Enter reps when finished."},
+ {t:"rest",secs:600,label:"Rest — 10:00",instr:"THE PROCEDURE: stretch arms, chest, shoulders, stomach (3 min). Easy jog 2-3 min to move blood to the legs. Stretch legs. Keep shaking the arms. Sip diluted sports drink."},
+ {t:"sw",label:"1.5-mile run",instr:"Settle onto goal pace inside the first 100m. Even splits. Tap DONE at the line.",btn:"GO — start run"}
+];
+var i=-1,mode="",anchorT=0,res={},timer=null;
+var live=document.getElementById("tm-live"),start=document.getElementById("tm-start"),
+    phase=document.getElementById("tm-phase"),clock=document.getElementById("tm-clock"),
+    instr=document.getElementById("tm-instr"),btn=document.getElementById("tm-btn"),
+    erow=document.getElementById("tm-entryrow"),elab=document.getElementById("tm-entrylabel"),
+    ent=document.getElementById("tm-entry"),abort=document.getElementById("tm-abort");
+function fmt(sec){sec=Math.max(0,Math.round(sec));var m=Math.floor(sec/60),x=sec%60;return m+":"+(x<10?"0":"")+x;}
+function tick(){var now=Date.now();
+ if(mode==="run")clock.textContent=fmt((now-anchorT)/1000);
+ else if(mode==="down"){var left=(anchorT-now)/1000;clock.textContent=fmt(left);
+  if(left<=0){var p=PH[i];
+   if(p.t==="rest"){next();}
+   else{mode="entry";clock.textContent="0:00";btn.textContent="Enter reps and continue";erow.style.display="flex";ent.value="";}}}}
+function show(){var p=PH[i];phase.textContent=p.label;instr.textContent=p.instr;erow.style.display="none";
+ if(p.t==="sw"){mode="ready";clock.textContent="0:00";btn.style.display="block";btn.textContent=p.btn;}
+ if(p.t==="cd"){mode="ready";clock.textContent=fmt(p.secs);btn.style.display="block";btn.textContent=p.btn;}
+ if(p.t==="rest"){mode="down";anchorT=Date.now()+p.secs*1000;btn.style.display="block";btn.textContent="Skip rest (not recommended)";}
+ if(p.t==="man"){mode="entry";clock.textContent="—";btn.style.display="block";btn.textContent="Enter reps and continue";erow.style.display="flex";elab.textContent=p.elabel;ent.value="";}}
+function next(){i++;if(i>=PH.length){finish();return;}show();
+ var p=PH[i];if(p.entry)elab.textContent=p.elabel;}
+function finish(){clearInterval(timer);live.style.display="none";start.style.display="block";start.textContent="Start Test Day Mode";
+ function set(id,v){var e=document.getElementById(id);if(e&&v!=null)e.value=v;}
+ set("in-swim",res.swim);set("in-run",res.run);set("in-push",res.push);set("in-sit",res.sit);set("in-pull",res.pull);
+ (async function(){var n=1;try{var r=await window.storage.get("pst_tests");var d=JSON.parse(r.value);
+   var mx=0;d.forEach(function(x){if(x.t>mx)mx=x.t;});n=Math.min(mx+1,10);}catch(e){}
+  set("in-test",String(n));
+  var m=document.getElementById("save-msg");if(m)m.textContent="Test Day results filled in. Check the test number, add bodyweight, tap Save test.";})();}
+function main(){var p=PH[i];
+ if(mode==="ready"&&p.t==="sw"){mode="run";anchorT=Date.now();btn.textContent="DONE";return;}
+ if(mode==="run"){var el=(Date.now()-anchorT)/1000;var v=fmt(el);
+  if(p.label.indexOf("swim")>-1)res.swim=v;else res.run=v;next();return;}
+ if(mode==="ready"&&p.t==="cd"){mode="down";anchorT=Date.now()+p.secs*1000;btn.textContent="Counting down...";return;}
+ if(mode==="down"&&p.t==="rest"){next();return;}
+ if(mode==="entry"){var n=parseInt(ent.value,10);if(isNaN(n)){instr.textContent="Enter the rep count first.";return;}
+  res[p.entry]=n;next();return;}}
+start.addEventListener("click",function(){i=-1;res={};live.style.display="block";start.style.display="none";
+ clearInterval(timer);timer=setInterval(tick,250);next();});
+btn.addEventListener("click",main);
+abort.addEventListener("click",function(){clearInterval(timer);live.style.display="none";start.style.display="block";});
+})();
+</script>
+</body>
+</html>
